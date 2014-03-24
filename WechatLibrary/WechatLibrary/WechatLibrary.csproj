@@ -44,16 +44,33 @@
     <Compile Include="Interface\IImageHandler.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Interface\ILinkHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Interface\ILocationHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\IMenuButtonHandler.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Interface\IQRScanHandler.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Interface\IQRSubscribeHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\ISubscribeHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Interface\ITextHandler.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Interface\IUploadLocationHandler.cs" />
+    <Compile Include="Interface\IUnsubscribeHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\IUploadLocationHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Interface\IVideoHandler.cs">
       <SubType>Code</SubType>
     </Compile>
