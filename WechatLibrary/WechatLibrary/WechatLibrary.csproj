@@ -41,9 +41,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interface\ITextHandler.cs" />
-    <Compile Include="Message\Request\RequestBase.cs" />
-    <Compile Include="Message\Request\TextRequest.cs" />
+    <Compile Include="Interface\ITextHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\Event\MenuButtonRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\Event\QRScanRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\ImageRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\LinkRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\RequestBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\TextRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\VideoRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\VoiceRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wechat.cs" />
   </ItemGroup>

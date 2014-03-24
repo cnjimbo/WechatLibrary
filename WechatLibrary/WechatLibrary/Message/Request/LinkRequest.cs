@@ -5,42 +5,39 @@ using System.Text;
 
 namespace WechatLibrary.Message.Request
 {
-    /// <summary>
-    /// 接收消息基类。
-    /// </summary>
-    public abstract class RequestBase
+    public class LinkRequest : RequestBase
     {
         /// <summary>
-        /// 开发者微信号。
+        /// 消息标题。
         /// </summary>
-        public string ToUserName
+        public string Title
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 发送方帐号（一个 OpenID）。
+        /// 消息描述。
         /// </summary>
-        public string FromUserName
+        public string Description
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 消息创建时间（整型）。
+        /// 消息链接。
         /// </summary>
-        public int CreateTime
+        public string Url
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 消息类型。
+        /// 消息 Id，64 位整型。
         /// </summary>
-        public string MsgType
+        public long MsgId
         {
             get;
             set;

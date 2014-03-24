@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace WechatLibrary.Message.Request
+namespace WechatLibrary.Message.Request.Event
 {
-    public class TextRequest : RequestBase
+    public class MenuButtonRequest : RequestBase
     {
         /// <summary>
-        /// 文本消息内容。
+        /// 事件类型，CLICK。
         /// </summary>
-        public string Content
+        public string Event
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 消息 id，64 位整型。
+        /// 事件 KEY 值，与自定义菜单接口中 KEY 值对应。
         /// </summary>
-        public long MsgId
+        public string EventKey
         {
             get;
             set;
