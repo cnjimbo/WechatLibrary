@@ -3,32 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace WechatLibrary.Message.Request
+namespace WechatLibrary.Message.Response
 {
-    public class ImageRequest : RequestBase
+    /// <summary>
+    /// 回复消息基类。
+    /// </summary>
+    public abstract class ResponseResultBase
     {
         /// <summary>
-        /// 图片链接。
+        /// 接收方帐号（收到的 OpenID）。
         /// </summary>
-        public string PicUrl
+        public string ToUserName
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 图片消息媒体 id，可以调用多媒体文件下载接口拉取数据。
+        /// 消息创建时间（整型）。
         /// </summary>
-        public string MediaId
+        public int CreateTime
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 消息 id，64 位整型。
+        /// 消息类型。
         /// </summary>
-        public long MsgId
+        public string MsgType
         {
             get;
             set;

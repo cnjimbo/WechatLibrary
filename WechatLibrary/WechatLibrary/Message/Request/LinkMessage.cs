@@ -5,37 +5,40 @@ using System.Text;
 
 namespace WechatLibrary.Message.Request
 {
-    public class VoiceRequest : RequestBase
+    /// <summary>
+    /// 链接消息。
+    /// </summary>
+    public class LinkMessage : RequestMessageBase
     {
         /// <summary>
-        /// 语音消息媒体 id，可以调用多媒体文件下载接口拉取数据。
+        /// 消息标题。
         /// </summary>
-        public string MediaId
+        public string Title
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 语音消息，如 amr，speex 等。
+        /// 消息描述。
         /// </summary>
-        public string Format
+        public string Description
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 语音识别结果，UTF8 编码。
+        /// 消息链接。
         /// </summary>
-        public string Recognition
+        public string Url
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 消息 id，64 位整型。
+        /// 消息 Id，64 位整型。
         /// </summary>
         public long MsgId
         {

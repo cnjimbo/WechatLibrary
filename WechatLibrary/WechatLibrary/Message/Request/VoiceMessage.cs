@@ -6,41 +6,41 @@ using System.Text;
 namespace WechatLibrary.Message.Request
 {
     /// <summary>
-    /// 接收消息基类。
+    /// 语音消息。
     /// </summary>
-    public abstract class RequestBase
+    public class VoiceMessage : RequestMessageBase
     {
         /// <summary>
-        /// 开发者微信号。
+        /// 语音消息媒体 id，可以调用多媒体文件下载接口拉取数据。
         /// </summary>
-        public string ToUserName
+        public string MediaId
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 发送方帐号（一个 OpenID）。
+        /// 语音消息，如 amr，speex 等。
         /// </summary>
-        public string FromUserName
+        public string Format
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 消息创建时间（整型）。
+        /// 语音识别结果，UTF8 编码。
         /// </summary>
-        public int CreateTime
+        public string Recognition
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 消息类型。
+        /// 消息 id，64 位整型。
         /// </summary>
-        public string MsgType
+        public long MsgId
         {
             get;
             set;

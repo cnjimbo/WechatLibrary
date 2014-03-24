@@ -5,10 +5,13 @@ using System.Text;
 
 namespace WechatLibrary.Message.Request.Event
 {
-    public class QRSubscribeRequest : RequestBase
+    /// <summary>
+    /// 自定义菜单事件。
+    /// </summary>
+    public class MenuButtonMessage : RequestMessageBase
     {
         /// <summary>
-        /// 事件类型，subscribe。
+        /// 事件类型，CLICK 或 VIEW。
         /// </summary>
         public string Event
         {
@@ -17,18 +20,9 @@ namespace WechatLibrary.Message.Request.Event
         }
 
         /// <summary>
-        /// 事件 KEY 值，qrscene_ 为前缀，后面为二维码的参数值。
+        /// 事件 KEY 值，与自定义菜单接口中 KEY 值对应或设置的跳转URL。
         /// </summary>
         public string EventKey
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// 二维码的 ticket，可用来换取二维码图片。
-        /// </summary>
-        public string Ticket
         {
             get;
             set;

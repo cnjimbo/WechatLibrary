@@ -5,7 +5,10 @@ using System.Text;
 
 namespace WechatLibrary.Message.Request
 {
-    public class VideoRequest : RequestBase
+    /// <summary>
+    /// 视频消息。
+    /// </summary>
+    public class VideoMessage : RequestMessageBase
     {
         /// <summary>
         /// 视频消息媒体 id，可以调用多媒体文件下载接口拉取数据。

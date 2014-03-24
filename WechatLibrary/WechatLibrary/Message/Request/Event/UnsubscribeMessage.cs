@@ -5,10 +5,13 @@ using System.Text;
 
 namespace WechatLibrary.Message.Request.Event
 {
-    public class SubscribeRequest : RequestBase
+    /// <summary>
+    /// 取消关注事件。
+    /// </summary>
+    public class UnsubscribeMessage : RequestMessageBase
     {
         /// <summary>
-        /// 事件类型，subscribe(订阅)、unsubscribe(取消订阅)。
+        /// 事件类型，unsubscribe(取消订阅)。
         /// </summary>
         public string Event
         {

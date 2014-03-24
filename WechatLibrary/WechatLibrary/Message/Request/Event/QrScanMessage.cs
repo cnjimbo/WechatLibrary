@@ -5,7 +5,10 @@ using System.Text;
 
 namespace WechatLibrary.Message.Request.Event
 {
-    public class QRScanRequest : RequestBase
+    /// <summary>
+    /// 扫描带参数二维码事件。
+    /// </summary>
+    public class QRScanMessage : RequestMessageBase
     {
         /// <summary>
         /// 事件类型，SCAN。

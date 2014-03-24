@@ -3,50 +3,50 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace WechatLibrary.Message.Request
+namespace WechatLibrary.Message.Response
 {
-    public class LocationRequest : RequestBase
+    public class MusicResult : ResponseResultBase
     {
         /// <summary>
-        /// 地理位置维度。
+        /// 音乐标题。
         /// </summary>
-        public double Location_X
+        public string Title
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 地理位置经度。
+        /// 音乐描述。
         /// </summary>
-        public double Location_Y
+        public string Description
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 地图缩放大小。
+        /// 音乐链接。
         /// </summary>
-        public double Scale
+        public string MusicURL
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 地理位置信息。
+        /// 高质量音乐链接，WIFI 环境优先使用该链接播放音乐。
         /// </summary>
-        public string Label
+        public string HQMusicUrl
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 消息 id，64 位整型。
+        /// 缩略图的媒体 id，通过上传多媒体文件，得到的 id。
         /// </summary>
-        public long MsgId
+        public string ThumbMediaId
         {
             get;
             set;

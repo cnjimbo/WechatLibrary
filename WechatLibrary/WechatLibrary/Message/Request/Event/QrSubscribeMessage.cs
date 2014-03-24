@@ -5,10 +5,13 @@ using System.Text;
 
 namespace WechatLibrary.Message.Request.Event
 {
-    public class UploadLocationRequest : RequestBase
+    /// <summary>
+    /// 扫描二维码关注事件。
+    /// </summary>
+    public class QRSubscribeMessage : RequestMessageBase
     {
         /// <summary>
-        /// 事件类型，LOCATION。
+        /// 事件类型，subscribe。
         /// </summary>
         public string Event
         {
@@ -17,27 +20,18 @@ namespace WechatLibrary.Message.Request.Event
         }
 
         /// <summary>
-        /// 地理位置纬度。
+        /// 事件 KEY 值，qrscene_ 为前缀，后面为二维码的参数值。
         /// </summary>
-        public string Latitude
+        public string EventKey
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 地理位置经度。
+        /// 二维码的 ticket，可用来换取二维码图片。
         /// </summary>
-        public string Longitude
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// 地理位置精度。
-        /// </summary>
-        public string Precision
+        public string Ticket
         {
             get;
             set;
