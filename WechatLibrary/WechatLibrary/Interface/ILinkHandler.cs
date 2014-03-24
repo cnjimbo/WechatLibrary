@@ -8,15 +8,15 @@ using WechatLibrary.Message.Response;
 namespace WechatLibrary.Interface
 {
     /// <summary>
-    /// 图片消息处理接口。
+    /// 链接消息处理接口。
     /// </summary>
-    public interface IImageHandler
+    public interface ILinkHandler
     {
         /// <summary>
-        /// 处理图片消息。
+        /// 处理链接消息。
         /// </summary>
-        /// <param name="message">图片消息。</param>
+        /// <param name="message">链接消息。</param>
         /// <returns>回复消息。</returns>
-        ResponseResultBase ProcessRequest(ImageMessage message);
+        ResponseResultBase ProcessRequest(LinkMessage message);
     }
 }
