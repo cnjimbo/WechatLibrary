@@ -50,10 +50,25 @@
     <Compile Include="Message\Request\Event\QRScanRequest.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Message\Request\Event\QRSubscribeRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\Event\SubscribeRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\Event\UnsubscribeRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\Event\UploadLocationRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Message\Request\ImageRequest.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Message\Request\LinkRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\LocationRequest.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Message\Request\RequestBase.cs">
