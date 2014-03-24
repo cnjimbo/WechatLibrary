@@ -7,8 +7,8 @@ using WechatLibrary.Message.Response;
 
 namespace WechatLibrary.Interface
 {
-    public interface ITextHandler
+    public interface ILocationHandler
     {
-        ResponseResultBase ProcessRequest(TextMessage message);
+        ResponseResultBase ProcessRequest(LocationMessage message);
     }
 }

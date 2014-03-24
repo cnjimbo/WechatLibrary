@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\IImageHandler.cs" />
+    <Compile Include="Interface\ILocationHandler.cs" />
     <Compile Include="Interface\ITextHandler.cs">
       <SubType>Code</SubType>
     </Compile>
