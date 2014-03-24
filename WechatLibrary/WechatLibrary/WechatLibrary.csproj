@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interface\" />
+    <Folder Include="MenuManagement\" />
     <Folder Include="Message\Request\" />
     <Folder Include="Message\Response\" />
   </ItemGroup>
