@@ -5,6 +5,9 @@ using System.Text;
 
 namespace WechatLibrary.Message.Response
 {
+    /// <summary>
+    /// 回复音乐消息。
+    /// </summary>
     public class MusicResult : ResponseResultBase
     {
         /// <summary>

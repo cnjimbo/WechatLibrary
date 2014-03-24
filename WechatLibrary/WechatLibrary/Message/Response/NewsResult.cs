@@ -5,6 +5,9 @@ using System.Text;
 
 namespace WechatLibrary.Message.Response
 {
+    /// <summary>
+    /// 回复图文消息。
+    /// </summary>
     public class NewsResult : ResponseResultBase
     {
         private List<NewsArticle> articles;
@@ -20,7 +23,7 @@ namespace WechatLibrary.Message.Response
             }
             set
             {
-                articles = new List<NewsArticle>();
+                articles = value;
             }
         }
     }
