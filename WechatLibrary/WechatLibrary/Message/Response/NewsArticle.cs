@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace WechatLibrary.Message.Response
+namespace WechatLibrary.Response
 {
     /// <summary>
     /// 图文消息项。

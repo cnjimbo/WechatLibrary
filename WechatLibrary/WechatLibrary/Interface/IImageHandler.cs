@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using WechatLibrary.Message.Request;
-using WechatLibrary.Message.Response;
+using WechatLibrary.Request;
+using WechatLibrary.Response;
 
 namespace WechatLibrary.Interface
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace WechatLibrary.Message.Request.Event
+namespace WechatLibrary.Request
 {
     /// <summary>
     /// 上报地理位置事件。

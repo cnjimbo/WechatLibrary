@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,6 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GlobalSupport\GlobalConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GlobalSupport\HandlerAssembly.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GlobalSupport\Wechat.RegisterAssembly.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Interface\IImageHandler.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -75,6 +85,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Interface\IVoiceHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MenuManagement\MenuButton.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Message\Request\Event\MenuButtonMessage.cs">
@@ -116,19 +129,65 @@
     <Compile Include="Message\Request\VoiceMessage.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Message\Response\ImageResult.cs" />
-    <Compile Include="Message\Response\MusicResult.cs" />
-    <Compile Include="Message\Response\NewsArticle.cs" />
-    <Compile Include="Message\Response\NewsResult.cs" />
-    <Compile Include="Message\Response\ResponseResultBase.cs" />
-    <Compile Include="Message\Response\TextResult.cs" />
-    <Compile Include="Message\Response\VideoResult.cs" />
-    <Compile Include="Message\Response\VoiceResult.cs" />
+    <Compile Include="Message\Response\EmptyResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Response\ImageResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Response\MusicResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Response\NewsArticle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Response\NewsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Response\ResponseResultBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Response\TextResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Response\VideoResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Response\VoiceResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Route\Route.End.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Route\Route.Fifth.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Route\Route.First.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Route\Route.Fourth.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Route\Route.Second.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Route\Route.Seventh.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Route\Route.Sixth.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Route\Route.Start.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Route\Route.Third.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\RequestXmlConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Wechat.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MenuManagement\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
