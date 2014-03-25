@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -48,7 +49,10 @@
     <Compile Include="GlobalSupport\HandlerAssembly.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GlobalSupport\Wechat.RegisterAssembly.cs">
+    <Compile Include="GlobalSupport\Signature.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GlobalSupport\Wechat.Register.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Interface\IImageHandler.cs">
@@ -188,6 +192,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Wechat.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{7b9a1f11-ca18-4847-895f-21da5dc2a1d1}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

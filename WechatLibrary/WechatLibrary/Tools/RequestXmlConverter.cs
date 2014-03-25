@@ -1,15 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Web.UI;
 using System.Xml.Linq;
-using WechatLibrary.Request;
 
 namespace WechatLibrary.Tools
 {
     internal class RequestXmlConverter
     {
+        /// <summary>
+        /// 反序列化 xml 到指定的类。
+        /// </summary>
+        /// <param name="xd">xml。</param>
+        /// <param name="type">类。</param>
+        /// <returns>类的实例。</returns>
         internal static object Deserialize(XDocument xd, Type type)
         {
             if (xd == null)
@@ -51,6 +53,12 @@ namespace WechatLibrary.Tools
             return instance;
         }
 
+        /// <summary>
+        /// 反序列化 xml 到指定的类。
+        /// </summary>
+        /// <typeparam name="T">类。</typeparam>
+        /// <param name="xd">xml。</param>
+        /// <returns>类的实例。</returns>
         internal static T Deserialize<T>(XDocument xd)
         {
             return (T)Deserialize(xd, typeof(T));

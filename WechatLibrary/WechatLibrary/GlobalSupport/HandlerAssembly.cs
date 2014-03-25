@@ -8,31 +8,46 @@ namespace WechatLibrary.GlobalSupport
 {
     internal class HandlerAssembly
     {
-        public string AppId
+        /// <summary>
+        /// AppId。
+        /// </summary>
+        internal string AppId
         {
             get;
             set;
         }
 
-        public string Secret
+        /// <summary>
+        /// Secret。
+        /// </summary>
+        internal string Secret
         {
             get;
             set;
         }
 
-        public string Token
+        /// <summary>
+        /// Token。
+        /// </summary>
+        internal string Token
         {
             get;
             set;
         }
 
-        public string WechatId
+        /// <summary>
+        /// 微信号 Id。
+        /// </summary>
+        internal string WechatId
         {
             get;
             set;
         }
 
-        public Assembly Assembly
+        /// <summary>
+        /// 处理该微信号消息的程序集。
+        /// </summary>
+        internal Assembly Assembly
         {
             get;
             set;
