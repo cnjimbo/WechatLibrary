@@ -20,7 +20,7 @@ namespace Common.Serialization
                     }
                 case EnumFormat.Name:
                     {
-                        return e.ToString();
+                        return "\""+ e.ToString()+"\"";
                     }
                 default:
                     {
