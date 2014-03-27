@@ -12,18 +12,7 @@ namespace ConsoleTest
     {
         static void Main(string[] args)
         {
-
-            Dictionary<string, int> dic = new Dictionary<string, int>();
-            dic.Add("111", 0);
-            dic.Add("ssss", 555);
-            foreach (var a in (dic as IDictionary))
-            {
-                
-            }
-
-
-
-
+            JsonHelper.EnumFormat = Common.Serialization.Json.EnumFormat.Name;
 
             WechatLibrary.MenuManagement.Menu menu = new Menu();
 
