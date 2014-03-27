@@ -16,11 +16,11 @@ namespace Common.Serialization
             {
                 case EnumFormat.Default:
                     {
-                        return e.ToString();
+                        return Convert.ToInt32(e).ToString();
                     }
                 case EnumFormat.Name:
                     {
-                        return Convert.ToInt32(e).ToString();
+                        return e.ToString();
                     }
                 default:
                     {
