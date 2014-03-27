@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
 
 namespace WechatLibrary.Response
@@ -26,6 +24,28 @@ namespace WechatLibrary.Response
             {
                 articles = value;
             }
+        }
+
+        /// <summary>
+        /// 创建一条回复图文消息。
+        /// </summary>
+        public NewsResult()
+        {
+            MsgType = "news";
+        }
+
+        internal override string Serialize()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[{3}]]></MsgType>", ToUserName, FromUserName, CreateTime, MsgType));
+            sb.Append(string.Format("<ArticleCount>{0}</ArticleCount>", Articles.Count));
+            sb.Append("<Articles>");
+            foreach (var article in Articles)
+            {
+                sb.Append(article.Serialize());
+            }
+            sb.Append("</Articles></xml>");
+            return sb.ToString();
         }
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using WechatLibrary.Request;
+﻿using WechatLibrary.Request;
 using WechatLibrary.Response;
 
 namespace WechatLibrary.Interface
@@ -16,7 +12,8 @@ namespace WechatLibrary.Interface
         /// 处理自定义菜单事件。
         /// </summary>
         /// <param name="message">自定义菜单事件。</param>
+        /// <param name="dbProcess">是否由数据库默认处理。</param>
         /// <returns>回复消息。</returns>
-        ResponseResultBase ProcessRequest(MenuButtonMessage message);
+        ResponseResultBase ProcessRequest(MenuButtonMessage message, ref bool dbProcess);
     }
 }

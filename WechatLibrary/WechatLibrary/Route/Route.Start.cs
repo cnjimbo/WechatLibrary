@@ -110,6 +110,8 @@ namespace WechatLibrary
                 Fifth();
                 Sixth();
                 Seventh();
+                Eighth();
+                _100th();
             }
             finally
             {

@@ -1,25 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using WechatLibrary.Response;
 
 namespace WechatLibrary
 {
     internal partial class Route
     {
         /// <summary>
-        /// 填充默认缺失信息。
+        /// 执行程序集中的类的 ProcessRequest 方法。
         /// </summary>
         internal void Seventh()
         {
-            if (string.IsNullOrEmpty(Response.ToUserName) == true)
+            if (DBProcess == false)
             {
-                Response.ToUserName = Request.FromUserName;
-            }
-            if (string.IsNullOrEmpty(Response.FromUserName) == true)
-            {
-                Response.FromUserName = Request.ToUserName;
-            }
-            if (Response.CreateTime == 0)
-            {
-                Response.CreateTime = (int)(DateTime.Now - new DateTime(1970, 1, 1, 0, 0, 0)).TotalSeconds;
+                object handler = Activator.CreateInstance(HandlerType);
+                MethodInfo method = HandlerType.GetMethod("ProcessRequest");
+                object[] parameters = new object[] {Request, DBProcess};
+                Response = (ResponseResultBase) method.Invoke(handler, parameters);
+                DBProcess = (bool) parameters[1];
             }
         }
     }

@@ -8,7 +8,7 @@ namespace WechatLibrary
     /// <summary>
     /// 微信类库入口。
     /// </summary>
-    public partial class Wechat
+    public static partial class Wechat
     {
         /// <summary>
         /// 处理微信用户消息。
@@ -69,6 +69,11 @@ namespace WechatLibrary
             {
                 // Get 请求。
 
+#if DEBUG
+                Route route = new Route(context, handlerAssembly);
+                route.Start();
+                return;
+#endif
                 Signature.DoSignature(context);
             }
         }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 namespace WechatLibrary.Response
 {
     /// <summary>
@@ -53,6 +49,19 @@ namespace WechatLibrary.Response
         {
             get;
             set;
+        }
+
+        /// <summary>
+        /// 创建一条回复音乐消息。
+        /// </summary>
+        public MusicResult()
+        {
+            MsgType = "music";
+        }
+
+        internal override string Serialize()
+        {
+            return string.Format("<xml><ToUserName><![CDATA[{0}]]></ToUserName><FromUserName><![CDATA[{1}]]></FromUserName><CreateTime>{2}</CreateTime><MsgType><![CDATA[{3}]]></MsgType><Music><Title><![CDATA[{4}]]></Title><Description><![CDATA[{5}]]></Description><MusicUrl><![CDATA[{6}]]></MusicUrl><HQMusicUrl><![CDATA[{7}]]></HQMusicUrl><ThumbMediaId><![CDATA[{8}]]></ThumbMediaId></Music></xml>", ToUserName, FromUserName, CreateTime, MsgType, Title, Description, MusicURL, HQMusicUrl, ThumbMediaId);
         }
     }
 }

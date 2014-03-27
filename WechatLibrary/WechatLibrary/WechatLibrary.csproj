@@ -43,10 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GlobalSupport\AccessToken.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GlobalSupport\AccessTokenManagement.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GlobalSupport\GlobalConfig.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GlobalSupport\HandlerAssembly.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GlobalSupport\Return\AccessTokenReturn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GlobalSupport\Return\ReturnBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GlobalSupport\Return\ReturnCode.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GlobalSupport\Signature.cs">
@@ -91,7 +106,22 @@
     <Compile Include="Interface\IVoiceHandler.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MenuManagement\Menu.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MenuManagement\MenuButton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MenuManagement\MenuButtonBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MenuManagement\MenuButtonType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MenuManagement\MenuButtonTypeConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MenuManagement\MenuSubButton.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Message\Request\Event\MenuButtonMessage.cs">
@@ -161,6 +191,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Route\Route.100th.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Route\Route.Eighth.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Route\Route.End.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -191,7 +227,9 @@
     <Compile Include="Tools\RequestXmlConverter.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Wechat.cs" />
+    <Compile Include="Wechat.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

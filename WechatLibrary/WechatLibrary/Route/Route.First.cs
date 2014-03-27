@@ -14,7 +14,11 @@ namespace WechatLibrary
             using (StreamReader sr = new StreamReader(this.HttpContext.Request.InputStream))
             {
                 string xml = sr.ReadToEnd();
+#if DEBUG
+                RequestXml = XDocument.Parse("<xml><ToUserName><![CDATA[toUser]]></ToUserName><FromUserName><![CDATA[fromUser]]></FromUserName><CreateTime>12345678</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[你好]]></Content></xml>");
+#else 
                 RequestXml = XDocument.Parse(xml);
+#endif
             }
         }
     }

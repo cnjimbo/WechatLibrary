@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using WechatLibrary.Request;
+﻿using WechatLibrary.Request;
 using WechatLibrary.Response;
 
 namespace WechatLibrary.Interface
@@ -16,7 +12,8 @@ namespace WechatLibrary.Interface
         /// 处理扫描二维码关注事件。
         /// </summary>
         /// <param name="message">扫描二维码关注事件。</param>
+        /// <param name="dbProcess">是否由数据库默认处理。</param>
         /// <returns>回复消息。</returns>
-        ResponseResultBase ProcessRequest(QRSubscribeMessage message);
+        ResponseResultBase ProcessRequest(QRSubscribeMessage message, ref bool dbProcess);
     }
 }

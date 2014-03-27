@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 namespace WechatLibrary.Response
 {
     /// <summary>
@@ -44,6 +40,11 @@ namespace WechatLibrary.Response
         {
             get;
             set;
+        }
+
+        internal string Serialize()
+        {
+            return string.Format("<item><Title><![CDATA[{0}]]></Title><Description><![CDATA[{1}]]></Description><PicUrl><![CDATA[{2}]]></PicUrl><Url><![CDATA[{3}]]></Url></item>", Title, Description, PicUrl, Url);
         }
     }
 }

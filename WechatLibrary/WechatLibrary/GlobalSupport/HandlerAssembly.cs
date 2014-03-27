@@ -1,13 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
+﻿using System.Reflection;
 
 namespace WechatLibrary.GlobalSupport
 {
+    /// <summary>
+    /// 微信类库注册处理程序集。
+    /// </summary>
     internal class HandlerAssembly
     {
+        /// <summary>
+        /// 获取 Id。
+        /// </summary>
+        internal string Id
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// AppId。
         /// </summary>
