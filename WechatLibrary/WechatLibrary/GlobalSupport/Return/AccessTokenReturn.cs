@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Common.Serialization;
+﻿using Common.Serialization;
+using WechatLibrary.Return;
 
 namespace WechatLibrary.GlobalSupport.Return
 {
-    internal class AccessTokenReturn
-    { /// <summary>
+    internal class AccessTokenReturn : ReturnBase
+    {
+        /// <summary>
         /// 获取到的凭证。
         /// </summary>
         [Json(Name = "access_token")]
