@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
 
 namespace WechatLibrary.Request
@@ -35,6 +36,15 @@ namespace WechatLibrary.Request
         {
             get;
             set;
+        }
+
+        public ImageMessage()
+        {
+        }
+
+        public ImageMessage(RequestMessageBase message)
+        {
+            RequestMessageBase.CopyProperties(message, this);
         }
     }
 }

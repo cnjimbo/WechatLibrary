@@ -52,7 +52,7 @@ namespace WechatLibrary
                             case "subscribe":
                                 {
                                     var eventKey = RequestXml.Root.Element("EventKey");
-                                    if (eventKey == null)
+                                    if (eventKey == null || string.IsNullOrWhiteSpace(eventKey.Value) == true)
                                     {
                                         this.HandlerType = GetTypeByInterface(typeof(ISubscribeHandler));
                                     }

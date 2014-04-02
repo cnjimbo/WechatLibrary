@@ -36,5 +36,14 @@ namespace WechatLibrary.Request
             get;
             set;
         }
+
+        public QRSubscribeMessage()
+        {
+        }
+
+        public QRSubscribeMessage(RequestMessageBase message)
+        {
+            RequestMessageBase.CopyProperties(message, this);
+        }
     }
 }

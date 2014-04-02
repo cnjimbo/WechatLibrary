@@ -58,12 +58,14 @@
     <Compile Include="GlobalSupport\Return\AccessTokenReturn.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GlobalSupport\Return\OAuth2AccessTokenReturn.cs" />
     <Compile Include="GlobalSupport\Return\ReturnBase.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GlobalSupport\Return\ReturnCode.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GlobalSupport\Return\UserInfoReturn.cs" />
     <Compile Include="GlobalSupport\Signature.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -227,6 +229,10 @@
     <Compile Include="Tools\RequestXmlConverter.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Tools\Wechat.IsWechat.cs" />
+    <Compile Include="UserInfoManagement\OAuth2\UserInfoManagement.GetOAuth2AccessToken.cs" />
+    <Compile Include="UserInfoManagement\OAuth2\UserInfoManagement.GetOpenId.cs" />
+    <Compile Include="UserInfoManagement\OAuth2\UserInfoManagement.GetUserInfo.cs" />
     <Compile Include="UserInfoManagement\UserInfoManagement.BuildBaseLink.cs" />
     <Compile Include="UserInfoManagement\UserInfoManagement.BuildUserInfoLink.cs" />
     <Compile Include="Wechat.cs">
@@ -239,9 +245,7 @@
       <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UserInfoManagement\OAuth2\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

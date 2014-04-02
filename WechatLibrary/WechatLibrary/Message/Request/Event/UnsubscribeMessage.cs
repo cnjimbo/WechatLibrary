@@ -18,5 +18,14 @@ namespace WechatLibrary.Request
             get;
             set;
         }
+
+        public UnsubscribeMessage()
+        {
+        }
+
+        public UnsubscribeMessage(RequestMessageBase message)
+        {
+            RequestMessageBase.CopyProperties(message, this);
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace WechatLibrary.Request
@@ -44,6 +45,42 @@ namespace WechatLibrary.Request
         {
             get;
             set;
+        }
+
+        /// <summary>
+        /// 创建一个 RequestMessageBase 的新实例。
+        /// </summary>
+        public RequestMessageBase()
+        {
+        }
+
+        /// <summary>
+        /// 以已有消息创建一个 RequestMessageBase 的新实例。
+        /// </summary>
+        /// <param name="message">已有消息。</param>
+        public RequestMessageBase(RequestMessageBase message)
+        {
+            CopyProperties(message, this);
+        }
+
+        internal static void CopyProperties(RequestMessageBase source, RequestMessageBase target)
+        {
+            Type sourceType = source.GetType();
+            Type targetType = target.GetType();
+            foreach (PropertyInfo property in targetType.GetProperties())
+            {
+                if (property.CanWrite == true)
+                {
+                    var sourceProperty = sourceType.GetProperty(property.Name);
+                    if (sourceProperty != null)
+                    {
+                        if (sourceProperty.GetValue(source, null) != null)
+                        {
+                            property.SetValue(target, sourceProperty.GetValue(source, null), null);
+                        }
+                    }
+                }
+            }
         }
     }
 }

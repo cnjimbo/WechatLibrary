@@ -54,5 +54,14 @@ namespace WechatLibrary.Request
             get;
             set;
         }
+
+        public LocationMessage()
+        {
+        }
+
+        public LocationMessage(RequestMessageBase message)
+        {
+            RequestMessageBase.CopyProperties(message, this);
+        }
     }
 }

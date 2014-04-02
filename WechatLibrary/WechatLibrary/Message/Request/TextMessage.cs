@@ -27,5 +27,14 @@ namespace WechatLibrary.Request
             get;
             set;
         }
+
+        public TextMessage()
+        {
+        }
+
+        public TextMessage(RequestMessageBase message)
+        {
+            RequestMessageBase.CopyProperties(message, this);
+        }
     }
 }

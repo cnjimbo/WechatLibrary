@@ -45,5 +45,14 @@ namespace WechatLibrary.Request
             get;
             set;
         }
+
+        public LinkMessage()
+        {
+        }
+
+        public LinkMessage(RequestMessageBase message)
+        {
+            RequestMessageBase.CopyProperties(message, this);
+        }
     }
 }

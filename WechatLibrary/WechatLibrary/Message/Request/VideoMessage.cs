@@ -36,5 +36,14 @@ namespace WechatLibrary.Request
             get;
             set;
         }
+
+        public VideoMessage()
+        {
+        }
+
+        public VideoMessage(RequestMessageBase message)
+        {
+            RequestMessageBase.CopyProperties(message, this);
+        }
     }
 }

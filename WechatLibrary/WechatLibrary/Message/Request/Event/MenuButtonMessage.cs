@@ -27,5 +27,14 @@ namespace WechatLibrary.Request
             get;
             set;
         }
+
+        public MenuButtonMessage()
+        {
+        }
+
+        public MenuButtonMessage(RequestMessageBase message)
+        {
+            RequestMessageBase.CopyProperties(message, this);
+        }
     }
 }

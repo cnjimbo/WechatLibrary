@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Common.Serialization.Json;
 
 namespace Common.Serialization
 {
@@ -14,13 +13,13 @@ namespace Common.Serialization
         {
             switch (JsonHelper.EnumFormat)
             {
-                case EnumFormat.Default:
+                case Json.EnumFormat.Default:
                     {
                         return Convert.ToInt32(e).ToString();
                     }
-                case EnumFormat.Name:
+                case Json.EnumFormat.Name:
                     {
-                        return "\""+ e.ToString()+"\"";
+                        return "\"" + e.ToString() + "\"";
                     }
                 default:
                     {

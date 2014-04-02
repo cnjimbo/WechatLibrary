@@ -28,8 +28,7 @@
     </TransformComponentArguments>
     <MissingTags>Summary, Parameter, Returns, AutoDocumentCtors, TypeParameter, AutoDocumentDispose</MissingTags>
     <DocumentationSources>
-      <DocumentationSource sourceFile="..\WechatLibrary\bin\Debug\WechatLibrary.dll" xmlns="" />
-      <DocumentationSource sourceFile="..\WechatLibrary\bin\Debug\WechatLibrary.xml" xmlns="" />
+      <DocumentationSource sourceFile="..\WechatLibrary\WechatLibrary.csproj" />
     </DocumentationSources>
     <MaximumGroupParts>2</MaximumGroupParts>
     <NamespaceGrouping>False</NamespaceGrouping>

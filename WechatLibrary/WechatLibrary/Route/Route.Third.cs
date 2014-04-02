@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net.Mime;
-using System.Text;
-using WechatLibrary.Request;
+﻿using WechatLibrary.Request;
 using WechatLibrary.Tools;
 
 namespace WechatLibrary
@@ -56,7 +50,7 @@ namespace WechatLibrary
                             case "subscribe":
                                 {
                                     var eventKey = RequestXml.Root.Element("EventKey");
-                                    if (eventKey == null)
+                                    if (eventKey == null || string.IsNullOrWhiteSpace(eventKey.Value) == true)
                                     {
                                         Request = RequestXmlConverter.Deserialize<SubscribeMessage>(RequestXml);
                                     }

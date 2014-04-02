@@ -1,9 +1,8 @@
-﻿using System;
+﻿using Common.Serialization;
+using Common.Web;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Common.Serialization;
-using System.Collections.Generic;
-using Common.Web;
 using WechatLibrary.GlobalSupport;
 using WechatLibrary.Return;
 
@@ -86,12 +85,22 @@ namespace WechatLibrary.MenuManagement
             return Menu.Build(this);
         }
 
+        /// <summary>
+        /// 获取当前部署在微信的自定义菜单的 Json 格式。
+        /// </summary>
+        /// <param name="assembly">注册的程序集。</param>
+        /// <returns>Json。</returns>
         public static string GetJson(Assembly assembly)
         {
             string url = string.Format("https://api.weixin.qq.com/cgi-bin/menu/get?access_token={0}", AccessTokenManagement.Get(assembly));
             return HttpHelper.Get(url);
         }
 
+        /// <summary>
+        /// 获取当前部署在微信的自定义菜单的 Json 格式。
+        /// </summary>
+        /// <param name="registerId">注册的 Id。</param>
+        /// <returns>Json。</returns>
         public static string GetJson(string registerId)
         {
             var query = GlobalConfig.HandlerAssemblies.Where(temp => temp.Id == registerId);
@@ -105,16 +114,29 @@ namespace WechatLibrary.MenuManagement
             }
         }
 
+        /// <summary>
+        /// 获取当前部署在微信的自定义菜单的 Json 格式。
+        /// </summary>
+        /// <returns>Json。</returns>
         public static string GetJson()
         {
             return GetJson(Assembly.GetCallingAssembly());
         }
 
+        /// <summary>
+        /// 获取当前部署在微信的自定义菜单。
+        /// </summary>
+        /// <returns>菜单。</returns>
         public static Menu Get()
         {
             return JsonHelper.Deserialize<Menu>(GetJson());
         }
 
+        /// <summary>
+        /// 获取当前部署在微信的自定义菜单。
+        /// </summary>
+        /// <param name="registerId">注册的 Id。</param>
+        /// <returns>菜单。</returns>
         public static Menu Get(string registerId)
         {
             var query = GlobalConfig.HandlerAssemblies.Where(temp => temp.Id == registerId);
@@ -128,6 +150,11 @@ namespace WechatLibrary.MenuManagement
             }
         }
 
+        /// <summary>
+        /// 获取当前部署在微信的自定义菜单。
+        /// </summary>
+        /// <param name="assembly">注册的程序集。</param>
+        /// <returns>菜单。</returns>
         public static Menu Get(Assembly assembly)
         {
             if (assembly == null)
@@ -137,12 +164,44 @@ namespace WechatLibrary.MenuManagement
             return JsonHelper.Deserialize<Menu>(GetJson(assembly));
         }
 
-        //public static ReturnBase Delete()
-        //{
-        //    string url = string.Format("https://api.weixin.qq.com/cgi-bin/menu/delete?access_token={0}", AccessTokenManagement.Get());
-        //    string response = HttpHelper.Get(url);
+        /// <summary>
+        /// 删除当前使用的自定义菜单。
+        /// </summary>
+        /// <returns>操作结果。</returns>
+        public static ReturnBase Delete()
+        {
+            return Delete(Assembly.GetCallingAssembly());
+        }
 
-        //    return JsonHelper.Deserialize<ReturnBase>(response);
-        //}
+        /// <summary>
+        /// 删除当前使用的自定义菜单。
+        /// </summary>
+        /// <param name="registerId">注册的 Id。</param>
+        /// <returns>操作结果。</returns>
+        public static ReturnBase Delete(string registerId)
+        {
+            var query = GlobalConfig.HandlerAssemblies.Where(temp => temp.Id == registerId);
+            if (query.Count() > 0)
+            {
+                return Delete(query.FirstOrDefault().Assembly);
+            }
+            else
+            {
+                return Delete(Assembly.GetCallingAssembly());
+            }
+        }
+
+        /// <summary>
+        /// 删除当前使用的自定义菜单。
+        /// </summary>
+        /// <param name="assembly">注册的程序集。</param>
+        /// <returns>操作结果。</returns>
+        public static ReturnBase Delete(Assembly assembly)
+        {
+            assembly = assembly ?? Assembly.GetCallingAssembly();
+            string url = string.Format("https://api.weixin.qq.com/cgi-bin/menu/delete?access_token={0}", AccessTokenManagement.Get(assembly));
+            string responseBody = HttpHelper.Get(url);
+            return JsonHelper.Deserialize<ReturnBase>(responseBody);
+        }
     }
 }
