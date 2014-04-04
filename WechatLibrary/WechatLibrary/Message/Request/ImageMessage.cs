@@ -38,10 +38,17 @@ namespace WechatLibrary.Request
             set;
         }
 
+        /// <summary>
+        /// 创建一个 ImageMessage 的新实例。
+        /// </summary>
         public ImageMessage()
         {
         }
 
+        /// <summary>
+        /// 以已有消息创建一个 ImageMessage 的新实例。
+        /// </summary>
+        /// <param name="message">已有消息。</param>
         public ImageMessage(RequestMessageBase message)
         {
             RequestMessageBase.CopyProperties(message, this);

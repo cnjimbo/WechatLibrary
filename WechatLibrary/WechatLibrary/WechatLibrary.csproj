@@ -233,8 +233,8 @@
     <Compile Include="UserInfoManagement\OAuth2\UserInfoManagement.GetOAuth2AccessToken.cs" />
     <Compile Include="UserInfoManagement\OAuth2\UserInfoManagement.GetOpenId.cs" />
     <Compile Include="UserInfoManagement\OAuth2\UserInfoManagement.GetUserInfo.cs" />
-    <Compile Include="UserInfoManagement\UserInfoManagement.BuildBaseLink.cs" />
-    <Compile Include="UserInfoManagement\UserInfoManagement.BuildUserInfoLink.cs" />
+    <Compile Include="UserInfoManagement\OAuth2\UserInfoManagement.BuildBaseLink.cs" />
+    <Compile Include="UserInfoManagement\OAuth2\UserInfoManagement.BuildUserInfoLink.cs" />
     <Compile Include="Wechat.cs">
       <SubType>Code</SubType>
     </Compile>

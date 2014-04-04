@@ -46,10 +46,17 @@ namespace WechatLibrary.Request
             set;
         }
 
+        /// <summary>
+        /// 创建一个 UploadLocationMessage 的新实例。
+        /// </summary>
         public UploadLocationMessage()
         {
         }
 
+        /// <summary>
+        /// 以已有消息创建一个 UploadLocationMessage 的新实例。
+        /// </summary>
+        /// <param name="message">已有消息。</param>
         public UploadLocationMessage(RequestMessageBase message)
         {
             RequestMessageBase.CopyProperties(message, this);

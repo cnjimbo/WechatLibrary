@@ -15,12 +15,7 @@ namespace WechatLibrary
             if (DBProcess == true && Request != null)
             {
 #warning TODO:DBProcess
-
-
                 string wechatId;
-
-
-                
             }
         }
     }

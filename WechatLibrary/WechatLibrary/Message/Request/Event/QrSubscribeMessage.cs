@@ -37,10 +37,17 @@ namespace WechatLibrary.Request
             set;
         }
 
+        /// <summary>
+        /// 创建一个 QRSubscribeMessage 的新实例。
+        /// </summary>
         public QRSubscribeMessage()
         {
         }
 
+        /// <summary>
+        /// 以已有消息创建一个 QRSubscribeMessage 的新实例。
+        /// </summary>
+        /// <param name="message">已有消息。</param>
         public QRSubscribeMessage(RequestMessageBase message)
         {
             RequestMessageBase.CopyProperties(message, this);
