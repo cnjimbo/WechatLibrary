@@ -11,15 +11,11 @@ namespace WechatLibrary
         /// <exception cref="System.Xml.XmlException">接收的消息 xml 格式错误时。</exception>
         internal void ReadXmlAndParse()
         {
-#if DEBUG
-            RequestXml = XDocument.Parse("<xml><ToUserName><![CDATA[toUser]]></ToUserName><FromUserName><![CDATA[fromUser]]></FromUserName><CreateTime>12345678</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[你好]]></Content></xml>");
-#else
             using (StreamReader sr = new StreamReader(this.HttpContext.Request.InputStream))
             {
                 string xml = sr.ReadToEnd();
                 RequestXml = XDocument.Parse(xml);
             }
-#endif
         }
     }
 }

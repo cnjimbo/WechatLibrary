@@ -72,12 +72,6 @@ namespace WechatLibrary
                 else if (method.Equals("GET", StringComparison.OrdinalIgnoreCase) == true)
                 {
                     // Get 请求。
-
-#if DEBUG
-                    Route route = new Route(context, handlerAssembly);
-                    route.Start();
-                    return;
-#endif
                     Signature.DoSignature(context);
                 }
             }
