@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 
 namespace WechatLibrary.GlobalSupport
@@ -17,8 +18,14 @@ namespace WechatLibrary.GlobalSupport
         /// </summary>
         /// <param name="context">当前 Http 上下文。</param>
         /// <returns>验证是否成功。</returns>
+        /// <exception cref="System.ArgumentNullException"><c>context</c> 为 null。</exception>
         private static bool IsSignature(HttpContext context)
         {
+            if (context == null)
+            {
+                throw new ArgumentNullException("context");
+            }
+
             List<string> tokens = new List<string>();
 
             // 获取注册的 Token。
@@ -41,6 +48,7 @@ namespace WechatLibrary.GlobalSupport
             }
             else
             {
+                // 尝试校验每个 Token。
                 foreach (var token in tokens)
                 {
                     // 微信加密签名，signature 结合了开发者填写的 token 参数和请求中的 timestamp 参数、nonce 参数。
@@ -70,19 +78,51 @@ namespace WechatLibrary.GlobalSupport
         /// </summary>
         /// <param name="context">当前 http 上下文。</param>
         /// <param name="validateFailureReturn">验证失败时返回的字符串，默认为 error。</param>
+        /// <exception cref="System.ArgumentNullException"><c>context</c> 为 null。</exception>
         internal static void DoSignature(HttpContext context, string validateFailureReturn = "error")
         {
-            context.Response.ContentType = "text/plain";
-            string echostr = context.Request["echostr"];
-            if (string.IsNullOrEmpty(echostr) == false && IsSignature(context) == true)
+            if (context == null)
             {
-                context.Response.Write(echostr);
+                throw new ArgumentNullException("context");
             }
-            else
+
+            if (validateFailureReturn == null)
             {
-                context.Response.Write(validateFailureReturn);
+                MethodBase methodBase = MethodBase.GetCurrentMethod();
+                ParameterInfo[] parameters = methodBase.GetParameters();
+                var parameter = parameters.Where(temp => temp.Name == "validateFailureReturn").FirstOrDefault();
+                if (parameter == null)
+                {
+                    // 反射方法自身参数失败。
+                    validateFailureReturn = string.Empty;
+                }
+                else
+                {
+                    validateFailureReturn = Convert.ToString(parameter.DefaultValue);
+                }
             }
-            context.Response.End();
+
+            try
+            {
+                HttpRequest request = context.Request;
+                string echostr = context.Request["echostr"];
+
+                HttpResponse response = context.Response;
+                response.ContentType = "text/plain";
+
+                if (string.IsNullOrEmpty(echostr) == false && IsSignature(context) == true)
+                {
+                    response.Write(echostr);
+                }
+                else
+                {
+                    response.Write(validateFailureReturn);
+                }
+                response.End();
+            }
+            catch (HttpException)
+            {
+            }
         }
     }
 }

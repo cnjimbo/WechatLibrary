@@ -42,6 +42,12 @@ namespace WechatLibrary.MenuManagement
             return JsonHelper.Deserialize<Menu>(json);
         }
 
+        /// <summary>
+        /// 创建微信自定义菜单。
+        /// </summary>
+        /// <param name="wxm">微信菜单。</param>
+        /// <param name="registerId">注册的 Id。</param>
+        /// <returns>操作结果。</returns>
         public static ReturnBase Build(Menu wxm, string registerId)
         {
             var query = GlobalConfig.HandlerAssemblies.Where(temp => temp.Id == registerId);
@@ -55,6 +61,12 @@ namespace WechatLibrary.MenuManagement
             }
         }
 
+        /// <summary>
+        /// 创建微信自定义菜单。
+        /// </summary>
+        /// <param name="wxm">微信菜单。</param>
+        /// <param name="assembly">注册的程序集。</param>
+        /// <returns>操作结果。</returns>
         public static ReturnBase Build(Menu wxm, Assembly assembly)
         {
             string requestBody;
@@ -75,14 +87,43 @@ namespace WechatLibrary.MenuManagement
             return JsonHelper.Deserialize<ReturnBase>(response);
         }
 
+        /// <summary>
+        /// 创建微信自定义菜单。
+        /// </summary>
+        /// <param name="wxm">微信菜单。</param>
+        /// <returns>操作结果。</returns>
         public static ReturnBase Build(Menu wxm)
         {
             return Build(wxm, Assembly.GetCallingAssembly());
         }
 
+        /// <summary>
+        /// 将当前菜单配置到微信上。
+        /// </summary>
+        /// <returns>操作结果。</returns>
         public ReturnBase Build()
         {
-            return Menu.Build(this);
+            return Menu.Build(this, Assembly.GetCallingAssembly());
+        }
+
+        /// <summary>
+        /// 将当前菜单配置到微信上。
+        /// </summary>
+        /// <param name="registerId">注册的 Id。</param>
+        /// <returns>操作结果。</returns>
+        public ReturnBase Build(string registerId)
+        {
+            return Menu.Build(this, registerId);
+        }
+
+        /// <summary>
+        /// 将当前菜单配置到微信上。
+        /// </summary>
+        /// <param name="assembly">注册的程序集。</param>
+        /// <returns>操作结果。</returns>
+        public ReturnBase Build(Assembly assembly)
+        {
+            return Menu.Build(this, assembly);
         }
 
         /// <summary>

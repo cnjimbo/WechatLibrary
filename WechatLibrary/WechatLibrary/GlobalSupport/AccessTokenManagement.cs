@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Reflection;
-using WechatLibrary.GlobalSupport.Return;
+using WechatLibrary.Return;
 
 namespace WechatLibrary.GlobalSupport
 {

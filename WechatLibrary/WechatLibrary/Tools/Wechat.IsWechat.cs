@@ -27,14 +27,22 @@ namespace WechatLibrary
             }
             else
             {
-                string userAgent = httpContext.Request.UserAgent;
-                if (string.IsNullOrEmpty(userAgent) == true)
+                try
+                {
+                    HttpRequest request = httpContext.Request;
+                    string userAgent = request.UserAgent;
+                    if (string.IsNullOrEmpty(userAgent) == true)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return userAgent.Contains("MicroMessenger", StringComparison.OrdinalIgnoreCase);
+                    }
+                }
+                catch (HttpException)
                 {
                     return false;
-                }
-                else
-                {
-                    return userAgent.Contains("MicroMessenger", StringComparison.OrdinalIgnoreCase);
                 }
             }
         }

@@ -1,7 +1,6 @@
 ﻿using Common.Serialization;
-using WechatLibrary.Return;
 
-namespace WechatLibrary.GlobalSupport.Return
+namespace WechatLibrary.Return
 {
     internal class AccessTokenReturn : ReturnBase
     {

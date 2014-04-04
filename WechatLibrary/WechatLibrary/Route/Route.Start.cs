@@ -103,19 +103,19 @@ namespace WechatLibrary
         {
             try
             {
-                First();
-                Second();
-                Third();
-                Fourth();
-                Fifth();
-                Sixth();
-                Seventh();
-                Eighth();
-                _100th();
+                ReadXmlAndParse();
+                GetMsgTypeFromXml();
+                DeserializeXmlByMsgType();
+                IsUseRegisterAssembly();
+                GetHandlerTypeByMsgType();
+                UseDBProcessIfHandlerTypeIsNull();
+                ExecuteProcessRequestMethodInHandler();
+                ExecuteDBProcess();
+                SetDefaultValue();
             }
             finally
             {
-                End();
+                SerializeResponseResultAndWriteToResponseStream();
             }
         }
     }

@@ -193,37 +193,37 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Route\Route.100th.cs">
+    <Compile Include="Route\Route.DeserializeXmlByMsgType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Route\Route.Eighth.cs">
+    <Compile Include="Route\Route.ExecuteDBProcess.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Route\Route.End.cs">
+    <Compile Include="Route\Route.ExecuteProcessRequestMethodInHandler.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Route\Route.Fifth.cs">
+    <Compile Include="Route\Route.GetHandlerTypeByMsgType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Route\Route.First.cs">
+    <Compile Include="Route\Route.GetMsgTypeFromXml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Route\Route.Fourth.cs">
+    <Compile Include="Route\Route.IsUseRegisterAssembly.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Route\Route.Second.cs">
+    <Compile Include="Route\Route.ReadXmlAndParse.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Route\Route.Seventh.cs">
+    <Compile Include="Route\Route.SerializeResponseResultAndWriteToResponseStream.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Route\Route.Sixth.cs">
+    <Compile Include="Route\Route.SetDefaultValue.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Route\Route.Start.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Route\Route.Third.cs">
+    <Compile Include="Route\Route.UseDBProcessIfHandlerTypeIsNull.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Tools\RequestXmlConverter.cs">

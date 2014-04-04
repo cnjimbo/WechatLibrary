@@ -49,32 +49,40 @@ namespace WechatLibrary
         {
             if (context == null)
             {
-                throw new ArgumentNullException("context 不能为空。");
+                throw new ArgumentNullException("context", "context 不能为空。");
             }
 
             // handlerAssembly 参数为空，则设置为调用该方法的程序集。
             handlerAssembly = handlerAssembly ?? Assembly.GetCallingAssembly();
 
-            // 该次 Http 请求方法。
-            string method = context.Request.HttpMethod;
-
-            if (method.Equals("POST", StringComparison.OrdinalIgnoreCase) == true)
+            try
             {
-                // Post 请求。
+                HttpRequest request = context.Request;
+                
+                // 该次 Http 请求方法。
+                string method = request.HttpMethod;
 
-                Route route = new Route(context, handlerAssembly);
-                route.Start();
-            }
-            else if (method.Equals("GET", StringComparison.OrdinalIgnoreCase) == true)
-            {
-                // Get 请求。
+                if (method.Equals("POST", StringComparison.OrdinalIgnoreCase) == true)
+                {
+                    // Post 请求。
+
+                    Route route = new Route(context, handlerAssembly);
+                    route.Start();
+                }
+                else if (method.Equals("GET", StringComparison.OrdinalIgnoreCase) == true)
+                {
+                    // Get 请求。
 
 #if DEBUG
-                Route route = new Route(context, handlerAssembly);
-                route.Start();
-                return;
+                    Route route = new Route(context, handlerAssembly);
+                    route.Start();
+                    return;
 #endif
-                Signature.DoSignature(context);
+                    Signature.DoSignature(context);
+                }
+            }
+            catch (HttpException)
+            {
             }
         }
     }

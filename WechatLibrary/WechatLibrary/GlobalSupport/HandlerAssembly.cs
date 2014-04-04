@@ -8,7 +8,7 @@ namespace WechatLibrary.GlobalSupport
     internal class HandlerAssembly
     {
         /// <summary>
-        /// 获取 Id。
+        /// 注册 Id。
         /// </summary>
         internal string Id
         {

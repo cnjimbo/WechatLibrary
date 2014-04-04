@@ -11,8 +11,9 @@ namespace WechatLibrary
         /// <summary>
         /// 获取执行程序集中实现了相应接口的类。
         /// </summary>
-        internal void Fifth()
+        internal void GetHandlerTypeByMsgType()
         {
+            RequestType = RequestType ?? string.Empty;
             switch (RequestType.ToLower())
             {
                 case "text":
@@ -51,14 +52,18 @@ namespace WechatLibrary
                         {
                             case "subscribe":
                                 {
-                                    var eventKey = RequestXml.Root.Element("EventKey");
-                                    if (eventKey == null || string.IsNullOrWhiteSpace(eventKey.Value) == true)
+                                    var root = RequestXml.Root;
+                                    if (root != null)
                                     {
-                                        this.HandlerType = GetTypeByInterface(typeof(ISubscribeHandler));
-                                    }
-                                    else
-                                    {
-                                        this.HandlerType = GetTypeByInterface(typeof(IQRSubscribeHandler));
+                                        var eventKey = root.Element("EventKey");
+                                        if (eventKey == null || string.IsNullOrWhiteSpace(eventKey.Value) == true)
+                                        {
+                                            this.HandlerType = GetTypeByInterface(typeof(ISubscribeHandler));
+                                        }
+                                        else
+                                        {
+                                            this.HandlerType = GetTypeByInterface(typeof(IQRSubscribeHandler));
+                                        }
                                     }
                                     break;
                                 }
@@ -79,22 +84,41 @@ namespace WechatLibrary
                                 }
                             case "click":
                                 {
-                                    this.HandlerType = GetTypeByInterfaceAndKey(RequestXml.Root.Element("EventKey").Value);
+                                    var root = RequestXml.Root;
+                                    if (root != null)
+                                    {
+                                        var eventKey = root.Element("EventKey");
+                                        if (eventKey != null)
+                                        {
+                                            this.HandlerType = GetTypeByInterfaceAndKey(eventKey.Value);
+                                        }
+                                    }
+                                    break;
+                                }
+                            default:
+                                {
+                                    this.HandlerType = null;
                                     break;
                                 }
                         }
+                        this.HandlerType = null;
+                        break;
+                    }
+                default:
+                    {
+                        this.HandlerType = null;
                         break;
                     }
             }
         }
         private Type GetTypeByInterface(Type interfaceType)
         {
-            return this.Assembly.GetTypes().Where(temp => temp.GetInterface(interfaceType.Name) != null).FirstOrDefault();
+            return this.Assembly.GetTypes().Where(temp => interfaceType.IsAssignableFrom(temp) == true).FirstOrDefault();
         }
 
         private Type GetTypeByInterfaceAndKey(string key)
         {
-            return this.Assembly.GetTypes().Where(temp => temp.GetInterface(typeof(IMenuButtonHandler).Name) != null && temp.Name.Equals(key + "Handler", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+            return this.Assembly.GetTypes().Where(temp => typeof(IMenuButtonHandler).IsAssignableFrom(temp) == true && temp.Name.Equals(key + "Handler", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
         }
     }
 }

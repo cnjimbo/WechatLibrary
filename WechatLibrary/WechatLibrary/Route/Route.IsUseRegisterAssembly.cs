@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 
 namespace WechatLibrary
 {
@@ -10,7 +7,7 @@ namespace WechatLibrary
         /// <summary>
         /// 是否使用注册的程序集。
         /// </summary>
-        internal void Fourth()
+        internal void IsUseRegisterAssembly()
         {
             var query = GlobalConfig.HandlerAssemblies.Where(temp => temp.WechatId == Request.ToUserName);
             if (query.Count() > 0)
