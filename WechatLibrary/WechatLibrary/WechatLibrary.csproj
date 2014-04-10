@@ -238,6 +238,14 @@
     <Compile Include="Wechat.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="WechatDb\DAL\W_KeyWordDAL.cs" />
+    <Compile Include="WechatDb\Model\W_KeyWord.cs" />
+    <Compile Include="WechatDb\Model\W_Menu.cs" />
+    <Compile Include="WechatDb\Model\W_ResourcesCata.cs" />
+    <Compile Include="WechatDb\Model\W_Resoureces.cs" />
+    <Compile Include="WechatDb\Model\W_UserInfo.cs" />
+    <Compile Include="WechatDb\Model\W_ViewPage.cs" />
+    <Compile Include="WechatDb\Model\W_WeChatInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Route\DbProcess\" />
