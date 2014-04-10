@@ -8,7 +8,7 @@ namespace WechatLibrary.Response
     /// </summary>
     public class NewsResult : ResponseResultBase
     {
-        private List<NewsArticle> articles;
+        private List<NewsArticle> _articles;
 
         /// <summary>
         /// 图文消息项。
@@ -17,12 +17,12 @@ namespace WechatLibrary.Response
         {
             get
             {
-                articles = articles ?? new List<NewsArticle>();
-                return articles;
+                _articles = _articles ?? new List<NewsArticle>();
+                return _articles;
             }
             set
             {
-                articles = value;
+                _articles = value;
             }
         }
 

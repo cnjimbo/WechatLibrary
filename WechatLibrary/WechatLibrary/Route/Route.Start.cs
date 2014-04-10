@@ -106,7 +106,12 @@ namespace WechatLibrary
                 ReadXmlAndParse();
                 GetMsgTypeFromXml();
                 DeserializeXmlByMsgType();
-                IsUseRegisterAssembly();
+
+#warning InitDb();
+
+
+
+                //IsUseRegisterAssembly();
                 GetHandlerTypeByMsgType();
                 UseDBProcessIfHandlerTypeIsNull();
                 ExecuteProcessRequestMethodInHandler();
