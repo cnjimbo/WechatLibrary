@@ -45,9 +45,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{7b9a1f11-ca18-4847-895f-21da5dc2a1d1}</Project>
-      <Name>Common</Name>
+    <ProjectReference Include="..\CommonDotNet\CommonDotNet.csproj">
+      <Project>{dacd4205-58bb-4cac-824e-9e53e2e8f2e8}</Project>
+      <Name>CommonDotNet</Name>
     </ProjectReference>
     <ProjectReference Include="..\WechatLibrary\WechatLibrary.csproj">
       <Project>{814c873c-8bc6-483c-a269-d4454066738e}</Project>

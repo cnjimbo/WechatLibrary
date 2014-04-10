@@ -1,5 +1,5 @@
-﻿using Common.Serialization;
-using System;
+﻿using System;
+using Common.Serialization.Json;
 
 namespace WechatLibrary.MenuManagement
 {

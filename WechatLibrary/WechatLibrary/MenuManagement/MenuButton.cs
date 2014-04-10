@@ -1,5 +1,6 @@
 ﻿using Common.Serialization;
 using System.Collections.Generic;
+using Common.Serialization.Json;
 
 namespace WechatLibrary.MenuManagement
 {

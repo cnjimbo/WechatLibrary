@@ -1,4 +1,5 @@
 ﻿using Common.Serialization;
+using Common.Serialization.Json;
 using Common.Web;
 using System;
 using System.Configuration;

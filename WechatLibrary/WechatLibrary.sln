@@ -5,13 +5,13 @@ VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WechatLibrary", "WechatLibrary\WechatLibrary.csproj", "{814C873C-8BC6-483C-A269-D4454066738E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{7B9A1F11-CA18-4847-895F-21DA5DC2A1D1}"
-EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "WechatLibraryDocumentation", "WechatLibraryDocumentation\WechatLibraryDocumentation.shfbproj", "{D063B83D-EE0E-43DF-B758-04A479F9BFB0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormTest", "WebFormTest\WebFormTest.csproj", "{AE38A360-DAA0-4180-ADDE-E4DCEF3BF862}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{C2FBB480-D81D-4528-AB1E-540BACE93BCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonDotNet", "CommonDotNet\CommonDotNet.csproj", "{DACD4205-58BB-4CAC-824E-9E53E2E8F2E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{814C873C-8BC6-483C-A269-D4454066738E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{814C873C-8BC6-483C-A269-D4454066738E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{814C873C-8BC6-483C-A269-D4454066738E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7B9A1F11-CA18-4847-895F-21DA5DC2A1D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7B9A1F11-CA18-4847-895F-21DA5DC2A1D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7B9A1F11-CA18-4847-895F-21DA5DC2A1D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7B9A1F11-CA18-4847-895F-21DA5DC2A1D1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D063B83D-EE0E-43DF-B758-04A479F9BFB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D063B83D-EE0E-43DF-B758-04A479F9BFB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D063B83D-EE0E-43DF-B758-04A479F9BFB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{C2FBB480-D81D-4528-AB1E-540BACE93BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2FBB480-D81D-4528-AB1E-540BACE93BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2FBB480-D81D-4528-AB1E-540BACE93BCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DACD4205-58BB-4CAC-824E-9E53E2E8F2E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DACD4205-58BB-4CAC-824E-9E53E2E8F2E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DACD4205-58BB-4CAC-824E-9E53E2E8F2E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DACD4205-58BB-4CAC-824E-9E53E2E8F2E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

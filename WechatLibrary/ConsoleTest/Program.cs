@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Common.Serialization;
+using Common.Serialization.Json;
 using WechatLibrary.MenuManagement;
 
 namespace ConsoleTest

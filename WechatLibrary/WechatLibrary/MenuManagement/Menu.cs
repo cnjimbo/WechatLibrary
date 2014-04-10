@@ -1,4 +1,5 @@
 ﻿using Common.Serialization;
+using Common.Serialization.Json;
 using Common.Web;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace WechatLibrary.MenuManagement
         /// <summary>
         /// 一级菜单数组，个数应为 1～3 个。
         /// </summary>
-        [Json(Name = "button", CollectionCountGreaterThan = 0, CollectionCountLessThan = 4)]
+        [Json(Name = "button", CountGreaterThan = 0, CountLessThan = 4)]
         public List<MenuButton> Button
         {
             get
@@ -74,7 +75,7 @@ namespace WechatLibrary.MenuManagement
             {
                 requestBody = JsonHelper.SerializeToJson(wxm);
             }
-            catch (JsonCollectionCountException)
+            catch (JsonCountException)
             {
                 return new ReturnBase()
                 {
