@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using WechatLibrary.Request;
 
 namespace WechatLibrary
 {
@@ -14,8 +15,10 @@ namespace WechatLibrary
         {
             if (DBProcess == true && Request != null)
             {
-#warning TODO:DBProcess
-                string wechatId;
+                if (this.RequestType == "text")
+                {
+                    DbProcessText((TextMessage)this.Request);
+                }
             }
         }
     }

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using WechatLibrary.Interface;
 
 namespace WechatLibrary
@@ -113,12 +111,26 @@ namespace WechatLibrary
         }
         private Type GetTypeByInterface(Type interfaceType)
         {
-            return this.Assembly.GetTypes().Where(temp => interfaceType.IsAssignableFrom(temp) == true).FirstOrDefault();
+            if (string.IsNullOrEmpty(this.Namespace) == true)
+            {
+                return this.Assembly.GetTypes().Where(temp => interfaceType.IsAssignableFrom(temp) == true).FirstOrDefault();
+            }
+            else
+            {
+                return this.Assembly.GetTypes().Where(temp => temp.Namespace.StartsWith(this.Namespace) == true && interfaceType.IsAssignableFrom(temp) == true).FirstOrDefault();
+            }
         }
 
         private Type GetTypeByInterfaceAndKey(string key)
         {
-            return this.Assembly.GetTypes().Where(temp => typeof(IMenuButtonHandler).IsAssignableFrom(temp) == true && temp.Name.Equals(key + "Handler", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+            if (string.IsNullOrEmpty(this.Namespace) == true)
+            {
+                return this.Assembly.GetTypes().Where(temp => typeof(IMenuButtonHandler).IsAssignableFrom(temp) == true && temp.Name.Equals(key + "Handler", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+            }
+            else
+            {
+                return this.Assembly.GetTypes().Where(temp => temp.Namespace.StartsWith(this.Namespace) == true && typeof(IMenuButtonHandler).IsAssignableFrom(temp) == true && temp.Name.Equals(key + "Handler", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+            }
         }
     }
 }

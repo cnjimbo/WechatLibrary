@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CommonDotNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CommonDotNet.1.0.8\lib\net40\CommonDotNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -193,6 +197,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Route\DbProcess\Route.DbProcess.Text.cs" />
     <Compile Include="Route\Route.DeserializeXmlByMsgType.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -208,6 +213,7 @@
     <Compile Include="Route\Route.GetMsgTypeFromXml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Route\Route.GetNamespaceFromDataBase.cs" />
     <Compile Include="Route\Route.IsUseRegisterAssembly.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -238,7 +244,13 @@
     <Compile Include="Wechat.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="WechatDb\BLL\W_KeyWordBLL.cs" />
+    <Compile Include="WechatDb\BLL\W_ResourcesCataBLL.cs" />
+    <Compile Include="WechatDb\BLL\W_WeChatInfoBLL.cs" />
+    <Compile Include="WechatDb\DAL\WechatDataBaseHelper.cs" />
     <Compile Include="WechatDb\DAL\W_KeyWordDAL.cs" />
+    <Compile Include="WechatDb\DAL\W_ResourcesCataDAL.cs" />
+    <Compile Include="WechatDb\DAL\W_WeChatInfoDAL.cs" />
     <Compile Include="WechatDb\Model\W_KeyWord.cs" />
     <Compile Include="WechatDb\Model\W_Menu.cs" />
     <Compile Include="WechatDb\Model\W_ResourcesCata.cs" />
@@ -248,13 +260,7 @@
     <Compile Include="WechatDb\Model\W_WeChatInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Route\DbProcess\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CommonDotNet\CommonDotNet.csproj">
-      <Project>{dacd4205-58bb-4cac-824e-9e53e2e8f2e8}</Project>
-      <Name>CommonDotNet</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

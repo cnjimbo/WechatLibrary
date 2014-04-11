@@ -93,6 +93,12 @@ namespace WechatLibrary
             set;
         }
 
+        internal string Namespace
+        {
+            get;
+            set;
+        }
+
         internal Route(HttpContext context, Assembly handlerAssembly)
         {
             this.HttpContext = context;
@@ -106,12 +112,7 @@ namespace WechatLibrary
                 ReadXmlAndParse();
                 GetMsgTypeFromXml();
                 DeserializeXmlByMsgType();
-
-#warning InitDb();
-
-
-
-                //IsUseRegisterAssembly();
+                GetNamespaceFromDataBase();
                 GetHandlerTypeByMsgType();
                 UseDBProcessIfHandlerTypeIsNull();
                 ExecuteProcessRequestMethodInHandler();

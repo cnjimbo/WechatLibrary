@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CommonDotNet">
+      <HintPath>..\packages\CommonDotNet.1.0.8\lib\net40\CommonDotNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,14 +48,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CommonDotNet\CommonDotNet.csproj">
-      <Project>{dacd4205-58bb-4cac-824e-9e53e2e8f2e8}</Project>
-      <Name>CommonDotNet</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WechatLibrary\WechatLibrary.csproj">
       <Project>{814c873c-8bc6-483c-a269-d4454066738e}</Project>
       <Name>WechatLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

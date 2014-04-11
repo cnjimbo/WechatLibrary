@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormTest", "WebFormTest\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{C2FBB480-D81D-4528-AB1E-540BACE93BCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonDotNet", "CommonDotNet\CommonDotNet.csproj", "{DACD4205-58BB-4CAC-824E-9E53E2E8F2E8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{C2FBB480-D81D-4528-AB1E-540BACE93BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2FBB480-D81D-4528-AB1E-540BACE93BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2FBB480-D81D-4528-AB1E-540BACE93BCA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DACD4205-58BB-4CAC-824E-9E53E2E8F2E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DACD4205-58BB-4CAC-824E-9E53E2E8F2E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DACD4205-58BB-4CAC-824E-9E53E2E8F2E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DACD4205-58BB-4CAC-824E-9E53E2E8F2E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
