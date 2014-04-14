@@ -36,7 +36,7 @@ namespace WechatLibrary.WechatDb.DAL
         {
             using (SqlHelper helper = WechatDataBaseHelper.Create())
             {
-                int rows = helper.ExecuteNonQuery("update [W_KeyWord] set CataID=@CataID,WContent=@WContent,WOption=@WOption,WKey=@WKey,ResponseType=@ResponseType,ResourcesID=@ResourcesID,CreateTime=@CreateTime,IsDelete=@IsDelete", new SqlParameter("@CataID", keyWord.CataID), new SqlParameter("@WContent", keyWord.WContent), new SqlParameter("@WOption", keyWord.WOption), new SqlParameter("@WKey", keyWord.WKey), new SqlParameter("@ResponseType", keyWord.ResponseType), new SqlParameter("@ResourcesID", keyWord.ResourcesID), new SqlParameter("@CreateTime", keyWord.CreateTime), new SqlParameter("@IsDelete", keyWord.IsDelete));
+                int rows = helper.ExecuteNonQuery("update [W_KeyWord] set CataID=@CataID,WContent=@WContent,WOption=@WOption,WKey=@WKey,ResponseType=@ResponseType,ResourcesID=@ResourcesID,CreateTime=@CreateTime,IsDelete=@IsDelete where KWID=@KWID", new SqlParameter("@KWID", keyWord.KWID), new SqlParameter("@CataID", keyWord.CataID), new SqlParameter("@WContent", keyWord.WContent), new SqlParameter("@WOption", keyWord.WOption), new SqlParameter("@WKey", keyWord.WKey), new SqlParameter("@ResponseType", keyWord.ResponseType), new SqlParameter("@ResourcesID", keyWord.ResourcesID), new SqlParameter("@CreateTime", keyWord.CreateTime), new SqlParameter("@IsDelete", keyWord.IsDelete));
                 return rows > 0;
             }
         }

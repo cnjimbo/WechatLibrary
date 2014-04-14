@@ -58,7 +58,7 @@ namespace WechatLibrary
             try
             {
                 HttpRequest request = context.Request;
-                
+
                 // 该次 Http 请求方法。
                 string method = request.HttpMethod;
 
@@ -71,6 +71,12 @@ namespace WechatLibrary
                 }
                 else if (method.Equals("GET", StringComparison.OrdinalIgnoreCase) == true)
                 {
+#if DEBUG
+                    Route route = new Route(context, handlerAssembly);
+                    route.Start();
+                    return;
+#endif
+
                     // Get 请求。
                     Signature.DoSignature(context);
                 }

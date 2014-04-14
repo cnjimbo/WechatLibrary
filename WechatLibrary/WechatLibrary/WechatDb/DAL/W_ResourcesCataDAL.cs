@@ -36,7 +36,7 @@ namespace WechatLibrary.WechatDb.DAL
         {
             using (SqlHelper helper = WechatDataBaseHelper.Create())
             {
-                int rows = helper.ExecuteNonQuery("update [W_ResourcesCata] set CataID=@CataID,WID=@WID,CataName=@CataName,CreateTime=@CreateTime,IsDelete=@IsDelete", new SqlParameter("@CataID", resourcesCata.CataID), new SqlParameter("@WID", resourcesCata.WID), new SqlParameter("@CataName", resourcesCata.CataName), new SqlParameter("@CreateTime", resourcesCata.CreateTime), new SqlParameter("@IsDelete", resourcesCata.IsDelete));
+                int rows = helper.ExecuteNonQuery("update [W_ResourcesCata] set CataID=@CataID,WID=@WID,CataName=@CataName,CreateTime=@CreateTime,IsDelete=@IsDelete where CataID=@CataID", new SqlParameter("@CataID", resourcesCata.CataID), new SqlParameter("@CataID", resourcesCata.CataID), new SqlParameter("@WID", resourcesCata.WID), new SqlParameter("@CataName", resourcesCata.CataName), new SqlParameter("@CreateTime", resourcesCata.CreateTime), new SqlParameter("@IsDelete", resourcesCata.IsDelete));
                 return rows > 0;
             }
         }

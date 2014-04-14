@@ -32,7 +32,7 @@ namespace WechatLibrary
                 List<W_KeyWord> keyWordList = keyWordBll.GetByResourcesCata(resourcesCata);
                 foreach (W_KeyWord keyWord in keyWordList)
                 {
-                    if (keyWord.WOption == "fullEqual")
+                    if (keyWord.WOption == "Equals")
                     {
                         if (message.Content == keyWord.WKey)
                         {
@@ -43,13 +43,37 @@ namespace WechatLibrary
                             return;
                         }
                     }
-                    else if (keyWord.WOption == "contain")
+                    else if (keyWord.WOption == "EqualsIgnoreCase")
                     {
-
+                        if (string.Equals(message.Content, keyWord.WKey, StringComparison.OrdinalIgnoreCase) == true)
+                        {
+                            this.Response = new TextResult()
+                            {
+                                Content = keyWord.WContent
+                            }; return;
+                        }
                     }
-                    else if (keyWord.WOption == "")
+                    else if (keyWord.WOption == "Contains")
                     {
-
+                        if (message.Content != null && message.Content.Contains(keyWord.WKey) == true)
+                        {
+                            this.Response = new TextResult()
+                            {
+                                Content = keyWord.WContent
+                            };
+                            return;
+                        }
+                    }
+                    else if (keyWord.WOption == "ContainsIgnoreCase")
+                    {
+                        if (message.Content != null && message.Content.IndexOf(keyWord.WKey, StringComparison.OrdinalIgnoreCase) >= 0)
+                        {
+                            this.Response = new TextResult()
+                            {
+                                Content = keyWord.WContent
+                            };
+                            return;
+                        }
                     }
                 }
             }

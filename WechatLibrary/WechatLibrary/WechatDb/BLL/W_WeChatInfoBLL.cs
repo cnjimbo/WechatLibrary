@@ -38,6 +38,11 @@ namespace WechatLibrary.WechatDb.BLL
             return new W_WeChatInfoDAL().GetAll();
         }
 
+        public W_WeChatInfo GetByAppID(string appId)
+        {
+            return GetAll().Where(temp => temp.AppID == appId).FirstOrDefault();
+        }
+
         public W_WeChatInfo GetByWechatID(string wechatID)
         {
             return GetAll().Where(temp => temp.WechatID == wechatID).FirstOrDefault();

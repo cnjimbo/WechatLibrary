@@ -38,7 +38,7 @@ namespace WechatLibrary.WechatDb.DAL
         {
             using (SqlHelper helper = WechatDataBaseHelper.Create())
             {
-                int rows = helper.ExecuteNonQuery("update [W_WeChatInfo] set AppID=@AppID,AppSecret=@AppSecret,Token=@Token,WechatID=@WechatID,AppNamespace=@AppNamespace,CreateTime=@CreateTime,IsDelete=@IsDelete", new SqlParameter("@AppID", weChatInfo.AppID), new SqlParameter("@AppSecret", weChatInfo.AppSecret), new SqlParameter("@Token", weChatInfo.Token), new SqlParameter("@WechatID", weChatInfo.WechatID), new SqlParameter("@AppNamespace", weChatInfo.AppNamespace), new SqlParameter("@CreateTime", weChatInfo.CreateTime), new SqlParameter("@IsDelete", weChatInfo.IsDelete));
+                int rows = helper.ExecuteNonQuery("update [W_WeChatInfo] set AppID=@AppID,AppSecret=@AppSecret,Token=@Token,WechatID=@WechatID,AppNamespace=@AppNamespace,CreateTime=@CreateTime,IsDelete=@IsDelete where WID=@WID", new SqlParameter("@WID", weChatInfo.WID), new SqlParameter("@AppID", weChatInfo.AppID), new SqlParameter("@AppSecret", weChatInfo.AppSecret), new SqlParameter("@Token", weChatInfo.Token), new SqlParameter("@WechatID", weChatInfo.WechatID), new SqlParameter("@AppNamespace", weChatInfo.AppNamespace), new SqlParameter("@CreateTime", weChatInfo.CreateTime), new SqlParameter("@IsDelete", weChatInfo.IsDelete));
                 return rows > 0;
             }
         }

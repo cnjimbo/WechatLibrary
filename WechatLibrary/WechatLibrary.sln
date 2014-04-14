@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormTest", "WebFormTest\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{C2FBB480-D81D-4528-AB1E-540BACE93BCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcTest", "MvcTest\MvcTest.csproj", "{122C2851-4735-4B6B-8258-B4A48EC4747F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C2FBB480-D81D-4528-AB1E-540BACE93BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2FBB480-D81D-4528-AB1E-540BACE93BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2FBB480-D81D-4528-AB1E-540BACE93BCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{122C2851-4735-4B6B-8258-B4A48EC4747F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{122C2851-4735-4B6B-8258-B4A48EC4747F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{122C2851-4735-4B6B-8258-B4A48EC4747F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{122C2851-4735-4B6B-8258-B4A48EC4747F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

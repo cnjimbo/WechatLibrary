@@ -12,7 +12,7 @@ namespace WechatLibrary.MenuManagement
     /// <summary>
     /// 微信菜单。
     /// </summary>
-    public class Menu
+    public partial class Menu
     {
         private List<MenuButton> button;
 

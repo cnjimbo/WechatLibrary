@@ -34,7 +34,7 @@
   <ItemGroup>
     <Reference Include="CommonDotNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\CommonDotNet.1.0.8\lib\net40\CommonDotNet.dll</HintPath>
+      <HintPath>..\packages\CommonDotNet.1.0.9\lib\net40\CommonDotNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -115,6 +115,7 @@
     <Compile Include="MenuManagement\Menu.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MenuManagement\Menu.DataBase.cs" />
     <Compile Include="MenuManagement\MenuButton.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -245,10 +246,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WechatDb\BLL\W_KeyWordBLL.cs" />
+    <Compile Include="WechatDb\BLL\W_MenuBLL.cs" />
     <Compile Include="WechatDb\BLL\W_ResourcesCataBLL.cs" />
     <Compile Include="WechatDb\BLL\W_WeChatInfoBLL.cs" />
     <Compile Include="WechatDb\DAL\WechatDataBaseHelper.cs" />
     <Compile Include="WechatDb\DAL\W_KeyWordDAL.cs" />
+    <Compile Include="WechatDb\DAL\W_MenuDAL.cs" />
     <Compile Include="WechatDb\DAL\W_ResourcesCataDAL.cs" />
     <Compile Include="WechatDb\DAL\W_WeChatInfoDAL.cs" />
     <Compile Include="WechatDb\Model\W_KeyWord.cs" />
@@ -262,6 +265,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

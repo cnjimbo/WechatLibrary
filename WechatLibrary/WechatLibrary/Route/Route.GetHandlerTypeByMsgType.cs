@@ -109,6 +109,7 @@ namespace WechatLibrary
                     }
             }
         }
+
         private Type GetTypeByInterface(Type interfaceType)
         {
             if (string.IsNullOrEmpty(this.Namespace) == true)
@@ -117,7 +118,7 @@ namespace WechatLibrary
             }
             else
             {
-                return this.Assembly.GetTypes().Where(temp => temp.Namespace.StartsWith(this.Namespace) == true && interfaceType.IsAssignableFrom(temp) == true).FirstOrDefault();
+                return this.Assembly.GetTypes().Where(temp => temp.Namespace != null && temp.Namespace.StartsWith(this.Namespace) == true && interfaceType.IsAssignableFrom(temp) == true).FirstOrDefault();
             }
         }
 
@@ -129,7 +130,7 @@ namespace WechatLibrary
             }
             else
             {
-                return this.Assembly.GetTypes().Where(temp => temp.Namespace.StartsWith(this.Namespace) == true && typeof(IMenuButtonHandler).IsAssignableFrom(temp) == true && temp.Name.Equals(key + "Handler", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+                return this.Assembly.GetTypes().Where(temp => temp.Namespace != null && temp.Namespace.StartsWith(this.Namespace) == true && typeof(IMenuButtonHandler).IsAssignableFrom(temp) == true && temp.Name.Equals(key + "Handler", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
             }
         }
     }
