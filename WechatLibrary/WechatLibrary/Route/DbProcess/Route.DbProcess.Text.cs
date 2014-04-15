@@ -34,13 +34,20 @@ namespace WechatLibrary
                 {
                     if (keyWord.WOption == "Equals")
                     {
-                        if (message.Content == keyWord.WKey)
+                        if (message.Content == keyWord.WContent)
                         {
-                            this.Response = new TextResult()
+                            if (string.IsNullOrEmpty(keyWord.ResponseType) == true)
                             {
-                                Content = keyWord.WContent
-                            };
-                            return;
+                                return;
+                            }
+                            else if (keyWord.ResponseType.Equals("viewpage", StringComparison.OrdinalIgnoreCase) == true)
+                            {
+
+                            }
+                            else
+                            {
+
+                            }
                         }
                     }
                     else if (keyWord.WOption == "EqualsIgnoreCase")

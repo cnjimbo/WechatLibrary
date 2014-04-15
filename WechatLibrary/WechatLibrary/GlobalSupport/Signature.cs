@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Linq;
 using System.Reflection;
 using System.Web;
+using WechatLibrary.WechatDb.BLL;
 
 namespace WechatLibrary.GlobalSupport
 {
@@ -28,10 +29,9 @@ namespace WechatLibrary.GlobalSupport
 
             List<string> tokens = new List<string>();
 
-            // 获取注册的 Token。
-            tokens.AddRange(from temp in GlobalConfig.HandlerAssemblies
-                            where string.IsNullOrEmpty(temp.Token) == false
-                            select temp.Token);
+            // 获取数据库的 Token。
+            W_WeChatInfoBLL bll = new W_WeChatInfoBLL();
+            tokens.AddRange(bll.GetAll().Select(temp => temp.Token));
 
             // 获取 web.config 的 Token。
             if (string.IsNullOrEmpty(ConfigurationManager.AppSettings["Token"]) == false)

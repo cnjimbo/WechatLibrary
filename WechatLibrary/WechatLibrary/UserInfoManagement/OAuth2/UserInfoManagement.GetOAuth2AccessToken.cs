@@ -16,38 +16,12 @@ namespace WechatLibrary
         /// 获取网页授权 AccessToken。
         /// </summary>
         /// <param name="code">获取用户信息重定向的链接中的 code 参数。</param>
-        /// <param name="registerId">注册的 Id。</param>
+        /// <param name="appId">AppId。</param>
+        /// <param name="secret">Secret。</param>
         /// <returns>网页授权 AccessToken。</returns>
-        public static OAuth2AccessTokenReturn GetOAuth2AccessToken(string code, string registerId)
+        public static OAuth2AccessTokenReturn GetOAuth2AccessToken(string code, string appId, string secret)
         {
-            string appid;
-            string secret;
-
-            #region 根据注册 Id 获取 AppId。
-
-            var query = GlobalConfig.HandlerAssemblies.Where(temp => temp.Id == registerId);
-            if (query.Count() <= 0)
-            {
-                appid = ConfigurationManager.AppSettings["AppId"];
-                if (string.IsNullOrEmpty(appid) == true)
-                {
-                    throw new ArgumentException("未发现可用的 AppId。");
-                }
-                secret = ConfigurationManager.AppSettings["Secret"];
-                if (string.IsNullOrEmpty(secret) == true)
-                {
-                    throw new ArgumentException("未发现可用的 Secret。");
-                }
-            }
-            else
-            {
-                appid = query.FirstOrDefault().AppId;
-                secret = query.FirstOrDefault().Secret;
-            }
-
-            #endregion
-
-            string url = string.Format(OAuth2AccessTokenTemplate, appid, secret, code);
+            string url = string.Format(OAuth2AccessTokenTemplate, appId, secret, code);
 
             string responseBody = HttpHelper.Get(url);
 

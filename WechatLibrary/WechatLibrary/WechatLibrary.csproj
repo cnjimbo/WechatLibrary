@@ -53,12 +53,6 @@
     <Compile Include="GlobalSupport\AccessTokenManagement.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GlobalSupport\GlobalConfig.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="GlobalSupport\HandlerAssembly.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="GlobalSupport\Return\AccessTokenReturn.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -71,9 +65,6 @@
     </Compile>
     <Compile Include="GlobalSupport\Return\UserInfoReturn.cs" />
     <Compile Include="GlobalSupport\Signature.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="GlobalSupport\Wechat.Register.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Interface\IImageHandler.cs">
@@ -245,6 +236,7 @@
     <Compile Include="Wechat.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="WechatDb\BLL\W_ViewPageBLL.cs" />
     <Compile Include="WechatDb\BLL\W_KeyWordBLL.cs" />
     <Compile Include="WechatDb\BLL\W_MenuBLL.cs" />
     <Compile Include="WechatDb\BLL\W_ResourcesCataBLL.cs" />
@@ -253,6 +245,7 @@
     <Compile Include="WechatDb\DAL\W_KeyWordDAL.cs" />
     <Compile Include="WechatDb\DAL\W_MenuDAL.cs" />
     <Compile Include="WechatDb\DAL\W_ResourcesCataDAL.cs" />
+    <Compile Include="WechatDb\DAL\W_ViewPageDAL.cs" />
     <Compile Include="WechatDb\DAL\W_WeChatInfoDAL.cs" />
     <Compile Include="WechatDb\Model\W_KeyWord.cs" />
     <Compile Include="WechatDb\Model\W_Menu.cs" />

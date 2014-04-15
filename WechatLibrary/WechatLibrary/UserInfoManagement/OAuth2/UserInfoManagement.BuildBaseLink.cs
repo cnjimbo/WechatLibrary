@@ -27,64 +27,14 @@ namespace WechatLibrary
         /// 创建一条获取用户 openid 的链接。
         /// </summary>
         /// <param name="url">授权后重定向的回调链接地址，请使用 urlencode 对链接进行处理。</param>
-        /// <param name="registerId">注册的 Id。</param>
+        /// <param name="appId">AppId。</param>
         /// <param name="state">重定向后会带上 state 参数，开发者可以填写 a-zA-Z0-9 的参数值。</param>
         /// <returns>链接。</returns>
-        public static string BuildBaseLink(string url, string registerId, object state = null)
-        {
-            string appid;
-
-            #region 根据注册 Id 获取 AppId。
-            var query = GlobalConfig.HandlerAssemblies.Where(temp => temp.Id == registerId);
-            if (query.Count() <= 0)
-            {
-                appid = ConfigurationManager.AppSettings["AppId"];
-                if (string.IsNullOrEmpty(appid) == true)
-                {
-                    throw new ArgumentException("未发现可用的 AppId。");
-                }
-            }
-            else
-            {
-                appid = query.FirstOrDefault().AppId;
-            }
-            #endregion
-
+        public static string BuildBaseLink(string url, string appId, object state = null)
+        {   
             state = state ?? string.Empty;
 
-            return string.Format(BaseLinkTemplate, appid, url, state.ToString());
-        }
-
-        /// <summary>
-        /// 创建一条获取用户 openid 的链接。
-        /// </summary>
-        /// <param name="url">授权后重定向的回调链接地址，请使用 urlencode 对链接进行处理。</param>
-        /// <param name="assembly">注册的程序集。</param>
-        /// <param name="state">重定向后会带上 state 参数，开发者可以填写 a-zA-Z0-9 的参数值。</param>
-        /// <returns>链接。</returns>
-        public static string BuildBaseLink(string url, Assembly assembly, object state = null)
-        {
-            string appid;
-
-            #region 根据程序集获取 AppId。
-            var query = GlobalConfig.HandlerAssemblies.Where(temp => temp.Assembly == assembly);
-            if (query.Count() <= 0)
-            {
-                appid = ConfigurationManager.AppSettings["AppId"];
-                if (string.IsNullOrEmpty(appid) == true)
-                {
-                    throw new ArgumentException("未发现可用的 AppId。");
-                }
-            }
-            else
-            {
-                appid = query.FirstOrDefault().AppId;
-            }
-            #endregion
-
-            state = state ?? string.Empty;
-
-            return string.Format(BaseLinkTemplate, appid, state.ToString());
+            return string.Format(BaseLinkTemplate, appId, url, state.ToString());
         }
     }
 }

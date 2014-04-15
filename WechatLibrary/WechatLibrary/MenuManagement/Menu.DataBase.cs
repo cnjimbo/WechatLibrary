@@ -39,7 +39,7 @@ namespace WechatLibrary.MenuManagement
             W_Menu wmenu = menuBll.GetByWeChatInfo(weChatInfo);
             if (wmenu == null)
             {
-                menuBll.Add(new W_Menu()
+                return menuBll.Add(new W_Menu()
                 {
                     MenuID = Guid.NewGuid().ToString(),
                     MenuName = JsonHelper.SerializeToJson(menu),
@@ -56,7 +56,7 @@ namespace WechatLibrary.MenuManagement
             else
             {
                 wmenu.MenuName = JsonHelper.SerializeToJson(menu);
-                menuBll.Update(wmenu);
+                return menuBll.Update(wmenu);
             }
         }
     }
