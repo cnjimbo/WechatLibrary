@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WechatLibrary.Net40", "WechatLibrary\WechatLibrary.Net40.csproj", "{814C873C-8BC6-483C-A269-D4454066738E}"
+EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "WechatLibraryDocumentation.Net40", "WechatLibraryDocumentation\WechatLibraryDocumentation.Net40.shfbproj", "{D063B83D-EE0E-43DF-B758-04A479F9BFB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc2Test", "Mvc2Test\Mvc2Test.csproj", "{1233CCFC-C3C1-46E3-9D84-F05BD4769E82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{814C873C-8BC6-483C-A269-D4454066738E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{814C873C-8BC6-483C-A269-D4454066738E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{814C873C-8BC6-483C-A269-D4454066738E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{814C873C-8BC6-483C-A269-D4454066738E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D063B83D-EE0E-43DF-B758-04A479F9BFB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D063B83D-EE0E-43DF-B758-04A479F9BFB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D063B83D-EE0E-43DF-B758-04A479F9BFB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D063B83D-EE0E-43DF-B758-04A479F9BFB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1233CCFC-C3C1-46E3-9D84-F05BD4769E82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1233CCFC-C3C1-46E3-9D84-F05BD4769E82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1233CCFC-C3C1-46E3-9D84-F05BD4769E82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1233CCFC-C3C1-46E3-9D84-F05BD4769E82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

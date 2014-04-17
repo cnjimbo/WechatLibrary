@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{814C873C-8BC6-483C-A269-D4454066738E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WechatLibrary</RootNamespace>
+    <AssemblyName>WechatLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\net40\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Net40</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\net40\WechatLibrary.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\net40\</OutputPath>
+    <DefineConstants>TRACE;Net40</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\net40\WechatLibrary.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonDotNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CommonDotNet.1.1.1\lib\net40\CommonDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GlobalSupport\AccessToken.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GlobalSupport\AccessTokenManagement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GlobalSupport\Return\AccessTokenReturn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GlobalSupport\Return\OAuth2AccessTokenReturn.cs" />
+    <Compile Include="GlobalSupport\Return\ReturnBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GlobalSupport\Return\ReturnCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GlobalSupport\Return\UserInfoReturn.cs" />
+    <Compile Include="GlobalSupport\Signature.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\IImageHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\ILinkHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\ILocationHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\IMenuButtonHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\IQRScanHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\IQRSubscribeHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\ISubscribeHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\ITextHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\IUnsubscribeHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\IUploadLocationHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\IVideoHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\IVoiceHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MenuManagement\Menu.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MenuManagement\Menu.DataBase.cs" />
+    <Compile Include="MenuManagement\MenuButton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MenuManagement\MenuButtonBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MenuManagement\MenuButtonType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MenuManagement\MenuButtonTypeConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MenuManagement\MenuSubButton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\Event\MenuButtonMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\Event\QRScanMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\Event\QRSubscribeMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\Event\SubscribeMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\Event\UnsubscribeMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\Event\UploadLocationMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\ImageMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\LinkMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\LocationMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\RequestMessageBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\TextMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\VideoMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Request\VoiceMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Response\EmptyResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Response\ImageResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Response\MusicResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Response\NewsArticle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Response\NewsResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Response\ResponseResultBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Response\TextResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Response\VideoResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Response\VoiceResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Route\DbProcess\Route.DbProcess.MenuButton.cs" />
+    <Compile Include="Route\DbProcess\Route.DbProcess.Text.cs" />
+    <Compile Include="Route\Route.DeserializeXmlByMsgType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Route\Route.ExecuteDBProcess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Route\Route.ExecuteProcessRequestMethodInHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Route\Route.GetHandlerTypeByMsgType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Route\Route.GetMsgTypeFromXml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Route\Route.GetNamespaceFromDataBase.cs" />
+    <Compile Include="Route\Route.IsUseRegisterAssembly.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Route\Route.ReadXmlAndParse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Route\Route.SerializeResponseResultAndWriteToResponseStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Route\Route.SetDefaultValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Route\Route.Start.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Route\Route.UseDBProcessIfHandlerTypeIsNull.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\RequestXmlConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\Wechat.IsWechat.cs" />
+    <Compile Include="UserInfoManagement\OAuth2\UserInfoManagement.GetOAuth2AccessToken.cs" />
+    <Compile Include="UserInfoManagement\OAuth2\UserInfoManagement.GetOpenId.cs" />
+    <Compile Include="UserInfoManagement\OAuth2\UserInfoManagement.GetUserInfo.cs" />
+    <Compile Include="UserInfoManagement\OAuth2\UserInfoManagement.BuildBaseLink.cs" />
+    <Compile Include="UserInfoManagement\OAuth2\UserInfoManagement.BuildUserInfoLink.cs" />
+    <Compile Include="Wechat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WechatDb\BLL\W_ResourcesBLL.cs" />
+    <Compile Include="WechatDb\BLL\W_ViewPageBLL.cs" />
+    <Compile Include="WechatDb\BLL\W_KeyWordBLL.cs" />
+    <Compile Include="WechatDb\BLL\W_MenuBLL.cs" />
+    <Compile Include="WechatDb\BLL\W_ResourcesCataBLL.cs" />
+    <Compile Include="WechatDb\BLL\W_ViewPageItemBLL.cs" />
+    <Compile Include="WechatDb\BLL\W_WeChatInfoBLL.cs" />
+    <Compile Include="WechatDb\DAL\WechatDataBaseHelper.cs" />
+    <Compile Include="WechatDb\DAL\W_KeyWordDAL.cs" />
+    <Compile Include="WechatDb\DAL\W_MenuDAL.cs" />
+    <Compile Include="WechatDb\DAL\W_ResourcesCataDAL.cs" />
+    <Compile Include="WechatDb\DAL\W_ResourcesDAL.cs" />
+    <Compile Include="WechatDb\DAL\W_ViewPageDAL.cs" />
+    <Compile Include="WechatDb\DAL\W_ViewPageItemDAL.cs" />
+    <Compile Include="WechatDb\DAL\W_WeChatInfoDAL.cs" />
+    <Compile Include="WechatDb\Model\W_KeyWord.cs" />
+    <Compile Include="WechatDb\Model\W_Menu.cs" />
+    <Compile Include="WechatDb\Model\W_ResourcesCata.cs" />
+    <Compile Include="WechatDb\Model\W_Resoureces.cs" />
+    <Compile Include="WechatDb\Model\W_UserInfo.cs" />
+    <Compile Include="WechatDb\Model\W_ViewPage.cs" />
+    <Compile Include="WechatDb\Model\W_ViewPageItem.cs" />
+    <Compile Include="WechatDb\Model\W_WeChatInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
