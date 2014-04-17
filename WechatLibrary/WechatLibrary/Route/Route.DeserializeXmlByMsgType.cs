@@ -95,7 +95,6 @@ namespace WechatLibrary
                                 }
                             }
                         }
-                        Request = null;
                         break;
                     }
                 default:

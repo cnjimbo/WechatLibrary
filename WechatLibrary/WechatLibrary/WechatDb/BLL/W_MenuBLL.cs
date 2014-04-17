@@ -38,9 +38,14 @@ namespace WechatLibrary.WechatDb.BLL
             return new W_MenuDAL().GetAll();
         }
 
-        public W_Menu GetByWeChatInfo(W_WeChatInfo weChatInfo)
+        public List<W_Menu> GetByWeChatInfo(W_WeChatInfo weChatInfo)
         {
-            return GetAll().Where(temp => temp.WID == weChatInfo.WID).FirstOrDefault();
+            return GetAll().Where(temp => temp.WID == weChatInfo.WID).ToList();
+        }
+
+        public List<W_Menu> GetChildButtons(W_Menu parent)
+        {
+            return GetAll().Where(temp => temp.PMenuID == parent.MenuID).ToList();
         }
     }
 }

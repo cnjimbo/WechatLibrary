@@ -5,57 +5,39 @@ using System.Text;
 
 namespace WechatLibrary.WechatDb.Model
 {
-    public class W_Menu
+    public class W_ViewPageItem
     {
-        public string MenuID
+        public string VPItemID
         {
             get;
             set;
         }
 
-        public string WID
+        public string VPID
         {
             get;
             set;
         }
 
-        public string MenuName
+        public string VPItemTitle
         {
             get;
             set;
         }
 
-        public string MenuType
+        public string VPItemDescription
         {
             get;
             set;
         }
 
-        public string MenuURL
+        public string VPItemUrl
         {
             get;
             set;
         }
 
-        public string MenuKey
-        {
-            get;
-            set;
-        }
-
-        public string PMenuID
-        {
-            get;
-            set;
-        }
-
-        public string ResponseType
-        {
-            get;
-            set;
-        }
-
-        public string ResourcesID
+        public string VPItemPicUrl
         {
             get;
             set;
@@ -68,12 +50,6 @@ namespace WechatLibrary.WechatDb.Model
         }
 
         public byte IsDelete
-        {
-            get;
-            set;
-        }
-
-        public int Sort
         {
             get;
             set;

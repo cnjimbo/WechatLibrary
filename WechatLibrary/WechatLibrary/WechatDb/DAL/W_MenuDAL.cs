@@ -16,7 +16,7 @@ namespace WechatLibrary.WechatDb.DAL
         {
             using (SqlHelper helper = WechatDataBaseHelper.Create())
             {
-                int rows = helper.ExecuteNonQuery("insert into [W_Menu] values (@MenuID,@WID,@MenuName,@MenuType,@MenuURL,@MenuKey,@PMenuID,@ResponseType,@ResourceID,@CreateTime,@IsDelete)", new SqlParameter("@MenuID", menu.MenuID), new SqlParameter("@WID", menu.WID), new SqlParameter("@MenuName", menu.MenuName), new SqlParameter("@MenuType", menu.MenuType), new SqlParameter("@MenuURL", menu.MenuURL), new SqlParameter("@MenuKey", menu.MenuKey), new SqlParameter("@PMenuID", menu.PMenuID), new SqlParameter("@ResponseType", menu.ResponseType), new SqlParameter("@ResourecesID", menu.ResourcesID), new SqlParameter("@CreateTime", menu.CreateTime), new SqlParameter("@IsDelete", menu.IsDelete));
+                int rows = helper.ExecuteNonQuery("insert into [W_Menu] values (@MenuID,@WID,@MenuName,@MenuType,@MenuURL,@MenuKey,@PMenuID,@ResponseType,@ResourceID,@CreateTime,@IsDelete,@Sort)", new SqlParameter("@MenuID", menu.MenuID), new SqlParameter("@WID", menu.WID), new SqlParameter("@MenuName", menu.MenuName), new SqlParameter("@MenuType", menu.MenuType), new SqlParameter("@MenuURL", menu.MenuURL), new SqlParameter("@MenuKey", menu.MenuKey), new SqlParameter("@PMenuID", menu.PMenuID), new SqlParameter("@ResponseType", menu.ResponseType), new SqlParameter("@ResourecesID", menu.ResourcesID), new SqlParameter("@CreateTime", menu.CreateTime), new SqlParameter("@IsDelete", menu.IsDelete),new SqlParameter("@Sort",menu.Sort));
                 return rows > 0;
             }
         }
@@ -36,7 +36,7 @@ namespace WechatLibrary.WechatDb.DAL
         {
             using (SqlHelper helper = WechatDataBaseHelper.Create())
             {
-                int rows = helper.ExecuteNonQuery("update [W_Menu] set WID=@WID,MenuName=@MenuName,MenuType=@MenuType,MenuURL=@MenuURL,MenuKey=@MenuKey,PMenuID=@PMenuID,ResponseType=@ResponseType,ResourcesID=@ResourcesID,CreateTime=@CreateTime,IsDelete=@IsDelete where MenuID=@MenuID", new SqlParameter("@MenuID", menu.MenuID), new SqlParameter("@WID", menu.WID), new SqlParameter("@MenuName", menu.MenuName), new SqlParameter("@MenuType", menu.MenuType), new SqlParameter("@MenuURL", menu.MenuURL), new SqlParameter("@MenuKey", menu.MenuKey), new SqlParameter("@PMenuID", menu.PMenuID), new SqlParameter("@ResponseType", menu.ResponseType), new SqlParameter("@ResourcesID", menu.ResourcesID), new SqlParameter("@CreateTime", menu.CreateTime), new SqlParameter("@IsDelete", menu.IsDelete));
+                int rows = helper.ExecuteNonQuery("update [W_Menu] set WID=@WID,MenuName=@MenuName,MenuType=@MenuType,MenuURL=@MenuURL,MenuKey=@MenuKey,PMenuID=@PMenuID,ResponseType=@ResponseType,ResourcesID=@ResourcesID,CreateTime=@CreateTime,IsDelete=@IsDelete,Sort=@Sort where MenuID=@MenuID", new SqlParameter("@MenuID", menu.MenuID), new SqlParameter("@WID", menu.WID), new SqlParameter("@MenuName", menu.MenuName), new SqlParameter("@MenuType", menu.MenuType), new SqlParameter("@MenuURL", menu.MenuURL), new SqlParameter("@MenuKey", menu.MenuKey), new SqlParameter("@PMenuID", menu.PMenuID), new SqlParameter("@ResponseType", menu.ResponseType), new SqlParameter("@ResourcesID", menu.ResourcesID), new SqlParameter("@CreateTime", menu.CreateTime), new SqlParameter("@IsDelete", menu.IsDelete),new SqlParameter("@Sort",menu.Sort));
                 return rows > 0;
             }
         }

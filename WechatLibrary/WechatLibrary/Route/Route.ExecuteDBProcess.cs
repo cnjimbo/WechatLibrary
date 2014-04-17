@@ -19,6 +19,10 @@ namespace WechatLibrary
                 {
                     DbProcessText((TextMessage)this.Request);
                 }
+                else if(this.Request is MenuButtonMessage)
+                {
+                     DbProcessMenuButton((MenuButtonMessage)this.Request);
+                }
             }
         }
     }
