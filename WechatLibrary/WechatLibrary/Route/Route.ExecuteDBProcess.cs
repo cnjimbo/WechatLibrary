@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using WechatLibrary.Request;
+using System.Configuration;
 
 namespace WechatLibrary
 {
@@ -13,15 +14,15 @@ namespace WechatLibrary
         /// </summary>
         internal void ExecuteDBProcess()
         {
-            if (DBProcess == true && Request != null)
+            if (DBProcess == true && Request != null && string.IsNullOrEmpty(ConfigurationManager.AppSettings["WechatDataBaseConnectionString"]) == false)
             {
                 if (this.RequestType == "text")
                 {
                     DbProcessText((TextMessage)this.Request);
                 }
-                else if(this.Request is MenuButtonMessage)
+                else if (this.Request is MenuButtonMessage)
                 {
-                     DbProcessMenuButton((MenuButtonMessage)this.Request);
+                    DbProcessMenuButton((MenuButtonMessage)this.Request);
                 }
             }
         }
